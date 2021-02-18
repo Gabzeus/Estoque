@@ -20,7 +20,7 @@ namespace EstoqueV1
             txtDataValidade.Mask = "00/00/0000";
         }
 
-        MySqlConnection conn = new MySqlConnection("server=localhost;port=3306;User id=root;database=pacstoque;password=");
+        MySqlConnection conn = new MySqlConnection("server=localhost;port=3306;User id=root;database=pacstoque;password=1234");
    
 
         private void btnSalvar_Click(object sender, EventArgs e)
@@ -282,6 +282,22 @@ namespace EstoqueV1
         private void txtDataValidade_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
         {
 
+        }
+
+        private void txtValor_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsDigit(e.KeyChar) && e.KeyChar != (char)8)
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txtQtd_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsDigit(e.KeyChar) && e.KeyChar != (char)8)
+            {
+                e.Handled = true;
+            }
         }
     }
 }

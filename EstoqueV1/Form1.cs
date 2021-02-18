@@ -19,7 +19,7 @@ namespace EstoqueV1
             InitializeComponent();
         }
 
-        MySqlConnection conn = new MySqlConnection("server=localhost;port=3306;User id=root;database=pacstoque;password=");
+        MySqlConnection conn = new MySqlConnection("server=localhost;port=3306;User id=root;database=pacstoque;password=1234");
         MySqlCommand cmd;
         public static string loginEmUso = "";
         
@@ -32,7 +32,7 @@ namespace EstoqueV1
         {
             if (txtUser.Text == "" & txtSenha.Text == "")
             {
-                MessageBox.Show("Bem vindo");
+                MessageBox.Show("Seja bem vindo!");
 
                 this.Hide();
                 Form2 ViewCad = new Form2();
@@ -54,7 +54,7 @@ namespace EstoqueV1
                     {
                         loginEmUso = login;
 
-                        MessageBox.Show("Bem vindo");
+                        MessageBox.Show("Seja bem vindo!");
 
                         this.Hide();
                         Form2 ViewCad = new Form2();

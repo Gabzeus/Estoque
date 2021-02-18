@@ -27,5 +27,27 @@ namespace EstoqueV1
         {
 
         }
+
+        private void txtValor_TextChanged(object sender, EventArgs e)
+        {
+        
+        }
+
+        private void txtValor_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if(!char.IsDigit(e.KeyChar)&&e.KeyChar!=(char)8)
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txtQtd_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsDigit(e.KeyChar) && e.KeyChar != (char)8)
+            {
+                e.Handled = true;
+            }
+
+        }
     }
 }

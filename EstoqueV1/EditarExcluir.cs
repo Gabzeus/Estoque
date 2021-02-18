@@ -247,5 +247,25 @@ namespace EstoqueV1
         {
 
         }
-    }
+
+      
+        private void txtQtdMinima_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsDigit(e.KeyChar) && e.KeyChar != (char)8)
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txtQtdMaxima_KeyPress(object sender, KeyPressEventArgs e)
+
+        {
+            if (!char.IsDigit(e.KeyChar) && e.KeyChar != (char)8)
+            {
+                e.Handled = true;
+            }
+        }
+
 }
+    }
+

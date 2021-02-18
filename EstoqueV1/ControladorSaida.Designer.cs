@@ -77,6 +77,7 @@ namespace EstoqueV1
             this.txtQtd.Name = "txtQtd";
             this.txtQtd.Size = new System.Drawing.Size(36, 20);
             this.txtQtd.TabIndex = 1;
+            this.txtQtd.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtQtd_KeyPress);
             // 
             // txtNome
             // 
@@ -109,6 +110,8 @@ namespace EstoqueV1
             this.txtValor.Name = "txtValor";
             this.txtValor.Size = new System.Drawing.Size(37, 20);
             this.txtValor.TabIndex = 2;
+            this.txtValor.TextChanged += new System.EventHandler(this.txtValor_TextChanged);
+            this.txtValor.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtValor_KeyPress);
             // 
             // lblValor
             // 

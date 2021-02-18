@@ -35,11 +35,12 @@ namespace EstoqueV1
             this.lbl1 = new System.Windows.Forms.Label();
             this.lbl2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // btnEntrar
             // 
-            this.btnEntrar.Location = new System.Drawing.Point(248, 67);
+            this.btnEntrar.Location = new System.Drawing.Point(269, 108);
             this.btnEntrar.Name = "btnEntrar";
             this.btnEntrar.Size = new System.Drawing.Size(75, 23);
             this.btnEntrar.TabIndex = 2;
@@ -49,7 +50,7 @@ namespace EstoqueV1
             // 
             // txtSenha
             // 
-            this.txtSenha.Location = new System.Drawing.Point(86, 84);
+            this.txtSenha.Location = new System.Drawing.Point(107, 125);
             this.txtSenha.Name = "txtSenha";
             this.txtSenha.PasswordChar = '*';
             this.txtSenha.Size = new System.Drawing.Size(151, 20);
@@ -57,7 +58,7 @@ namespace EstoqueV1
             // 
             // txtUser
             // 
-            this.txtUser.Location = new System.Drawing.Point(86, 51);
+            this.txtUser.Location = new System.Drawing.Point(107, 92);
             this.txtUser.Name = "txtUser";
             this.txtUser.Size = new System.Drawing.Size(151, 20);
             this.txtUser.TabIndex = 0;
@@ -67,7 +68,7 @@ namespace EstoqueV1
             // 
             this.lbl1.AutoSize = true;
             this.lbl1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl1.Location = new System.Drawing.Point(12, 49);
+            this.lbl1.Location = new System.Drawing.Point(33, 90);
             this.lbl1.Name = "lbl1";
             this.lbl1.Size = new System.Drawing.Size(68, 20);
             this.lbl1.TabIndex = 4;
@@ -77,7 +78,7 @@ namespace EstoqueV1
             // 
             this.lbl2.AutoSize = true;
             this.lbl2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl2.Location = new System.Drawing.Point(12, 82);
+            this.lbl2.Location = new System.Drawing.Point(33, 123);
             this.lbl2.Name = "lbl2";
             this.lbl2.Size = new System.Drawing.Size(60, 20);
             this.lbl2.TabIndex = 5;
@@ -87,17 +88,29 @@ namespace EstoqueV1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(231, 163);
+            this.label1.Location = new System.Drawing.Point(309, 181);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(85, 20);
             this.label1.TabIndex = 7;
             this.label1.Text = "Pacstoque";
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Underline);
+            this.label2.Location = new System.Drawing.Point(157, 28);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(73, 29);
+            this.label2.TabIndex = 8;
+            this.label2.Text = "Login";
+            // 
             // Form1
             // 
+            this.AcceptButton = this.btnEntrar;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(340, 192);
+            this.ClientSize = new System.Drawing.Size(413, 212);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.lbl2);
             this.Controls.Add(this.lbl1);
@@ -123,6 +136,7 @@ namespace EstoqueV1
         private System.Windows.Forms.Label lbl1;
         private System.Windows.Forms.Label lbl2;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
     }
 }
 

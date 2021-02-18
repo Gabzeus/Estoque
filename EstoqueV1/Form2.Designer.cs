@@ -30,31 +30,31 @@ namespace EstoqueV1
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend3 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.programBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.BtnAttGrafico = new System.Windows.Forms.Button();
-            this.BtnCheckQtd = new System.Windows.Forms.Button();
-            this.BtnSaldo = new System.Windows.Forms.Button();
-            this.label3 = new System.Windows.Forms.Label();
-            this.btnHistorico = new System.Windows.Forms.Button();
             this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.btnHistorico = new System.Windows.Forms.Button();
+            this.label3 = new System.Windows.Forms.Label();
+            this.BtnSaldo = new System.Windows.Forms.Button();
+            this.BtnCheckQtd = new System.Windows.Forms.Button();
+            this.BtnAttGrafico = new System.Windows.Forms.Button();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.BtnNewDadosUser = new System.Windows.Forms.Button();
-            this.BtnExcluirUser = new System.Windows.Forms.Button();
-            this.BtnAddUser = new System.Windows.Forms.Button();
-            this.viewConta = new System.Windows.Forms.ListView();
             this.label2 = new System.Windows.Forms.Label();
+            this.viewConta = new System.Windows.Forms.ListView();
+            this.BtnAddUser = new System.Windows.Forms.Button();
+            this.BtnExcluirUser = new System.Windows.Forms.Button();
+            this.BtnNewDadosUser = new System.Windows.Forms.Button();
             this.TabCadItem = new System.Windows.Forms.TabPage();
-            this.BtnCategoriaNova = new System.Windows.Forms.Button();
-            this.btnEditar = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.BtnEntrada = new System.Windows.Forms.Button();
-            this.btnSaidaItem = new System.Windows.Forms.Button();
-            this.lblTitulo = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.lblTitulo = new System.Windows.Forms.Label();
+            this.btnSaidaItem = new System.Windows.Forms.Button();
+            this.BtnEntrada = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.btnEditar = new System.Windows.Forms.Button();
+            this.BtnCategoriaNova = new System.Windows.Forms.Button();
             this.TabMenu = new System.Windows.Forms.TabControl();
             ((System.ComponentModel.ISupportInitialize)(this.programBindingSource)).BeginInit();
             this.tabPage3.SuspendLayout();
@@ -81,44 +81,21 @@ namespace EstoqueV1
             this.tabPage3.Text = "Rotinas";
             this.tabPage3.UseVisualStyleBackColor = true;
             // 
-            // BtnAttGrafico
+            // chart1
             // 
-            this.BtnAttGrafico.Location = new System.Drawing.Point(704, 97);
-            this.BtnAttGrafico.Name = "BtnAttGrafico";
-            this.BtnAttGrafico.Size = new System.Drawing.Size(139, 23);
-            this.BtnAttGrafico.TabIndex = 0;
-            this.BtnAttGrafico.Text = "&Atualizar grafico";
-            this.BtnAttGrafico.UseVisualStyleBackColor = true;
-            this.BtnAttGrafico.Click += new System.EventHandler(this.BtnAttGrafico_Click);
-            // 
-            // BtnCheckQtd
-            // 
-            this.BtnCheckQtd.Location = new System.Drawing.Point(18, 97);
-            this.BtnCheckQtd.Name = "BtnCheckQtd";
-            this.BtnCheckQtd.Size = new System.Drawing.Size(139, 39);
-            this.BtnCheckQtd.TabIndex = 1;
-            this.BtnCheckQtd.Text = "&Verificar quantidade de produto";
-            this.BtnCheckQtd.UseVisualStyleBackColor = true;
-            this.BtnCheckQtd.Click += new System.EventHandler(this.BtnCheckQtd_Click);
-            // 
-            // BtnSaldo
-            // 
-            this.BtnSaldo.Location = new System.Drawing.Point(18, 186);
-            this.BtnSaldo.Name = "BtnSaldo";
-            this.BtnSaldo.Size = new System.Drawing.Size(131, 26);
-            this.BtnSaldo.TabIndex = 2;
-            this.BtnSaldo.Text = "&Saldo";
-            this.BtnSaldo.UseVisualStyleBackColor = true;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Underline);
-            this.label3.Location = new System.Drawing.Point(345, 26);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(164, 26);
-            this.label3.TabIndex = 3;
-            this.label3.Text = "Dados da conta";
+            chartArea3.Name = "ChartArea1";
+            this.chart1.ChartAreas.Add(chartArea3);
+            legend3.Name = "Legend1";
+            this.chart1.Legends.Add(legend3);
+            this.chart1.Location = new System.Drawing.Point(313, 79);
+            this.chart1.Name = "chart1";
+            series3.ChartArea = "ChartArea1";
+            series3.Legend = "Legend1";
+            series3.Name = "Series1";
+            this.chart1.Series.Add(series3);
+            this.chart1.Size = new System.Drawing.Size(300, 300);
+            this.chart1.TabIndex = 5;
+            this.chart1.Text = "chart1";
             // 
             // btnHistorico
             // 
@@ -130,21 +107,44 @@ namespace EstoqueV1
             this.btnHistorico.UseVisualStyleBackColor = true;
             this.btnHistorico.Click += new System.EventHandler(this.btnHistorico_Click);
             // 
-            // chart1
+            // label3
             // 
-            chartArea1.Name = "ChartArea1";
-            this.chart1.ChartAreas.Add(chartArea1);
-            legend1.Name = "Legend1";
-            this.chart1.Legends.Add(legend1);
-            this.chart1.Location = new System.Drawing.Point(313, 79);
-            this.chart1.Name = "chart1";
-            series1.ChartArea = "ChartArea1";
-            series1.Legend = "Legend1";
-            series1.Name = "Series1";
-            this.chart1.Series.Add(series1);
-            this.chart1.Size = new System.Drawing.Size(300, 300);
-            this.chart1.TabIndex = 5;
-            this.chart1.Text = "chart1";
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Underline);
+            this.label3.Location = new System.Drawing.Point(345, 26);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(164, 26);
+            this.label3.TabIndex = 3;
+            this.label3.Text = "Dados da conta";
+            // 
+            // BtnSaldo
+            // 
+            this.BtnSaldo.Location = new System.Drawing.Point(18, 186);
+            this.BtnSaldo.Name = "BtnSaldo";
+            this.BtnSaldo.Size = new System.Drawing.Size(131, 26);
+            this.BtnSaldo.TabIndex = 2;
+            this.BtnSaldo.Text = "&Saldo";
+            this.BtnSaldo.UseVisualStyleBackColor = true;
+            // 
+            // BtnCheckQtd
+            // 
+            this.BtnCheckQtd.Location = new System.Drawing.Point(18, 97);
+            this.BtnCheckQtd.Name = "BtnCheckQtd";
+            this.BtnCheckQtd.Size = new System.Drawing.Size(139, 39);
+            this.BtnCheckQtd.TabIndex = 1;
+            this.BtnCheckQtd.Text = "&Verificar quantidade de produto";
+            this.BtnCheckQtd.UseVisualStyleBackColor = true;
+            this.BtnCheckQtd.Click += new System.EventHandler(this.BtnCheckQtd_Click);
+            // 
+            // BtnAttGrafico
+            // 
+            this.BtnAttGrafico.Location = new System.Drawing.Point(704, 97);
+            this.BtnAttGrafico.Name = "BtnAttGrafico";
+            this.BtnAttGrafico.Size = new System.Drawing.Size(139, 23);
+            this.BtnAttGrafico.TabIndex = 0;
+            this.BtnAttGrafico.Text = "&Atualizar grafico";
+            this.BtnAttGrafico.UseVisualStyleBackColor = true;
+            this.BtnAttGrafico.Click += new System.EventHandler(this.BtnAttGrafico_Click);
             // 
             // tabPage1
             // 
@@ -161,25 +161,24 @@ namespace EstoqueV1
             this.tabPage1.Text = "Configuração de conta";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
-            // BtnNewDadosUser
+            // label2
             // 
-            this.BtnNewDadosUser.Location = new System.Drawing.Point(38, 66);
-            this.BtnNewDadosUser.Name = "BtnNewDadosUser";
-            this.BtnNewDadosUser.Size = new System.Drawing.Size(131, 23);
-            this.BtnNewDadosUser.TabIndex = 0;
-            this.BtnNewDadosUser.Text = "&Alterar dados ";
-            this.BtnNewDadosUser.UseVisualStyleBackColor = true;
-            this.BtnNewDadosUser.Click += new System.EventHandler(this.BtnNewDadosUser_Click);
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Underline);
+            this.label2.Location = new System.Drawing.Point(335, 16);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(230, 26);
+            this.label2.TabIndex = 4;
+            this.label2.Text = "Configuração de conta";
             // 
-            // BtnExcluirUser
+            // viewConta
             // 
-            this.BtnExcluirUser.Location = new System.Drawing.Point(38, 200);
-            this.BtnExcluirUser.Name = "BtnExcluirUser";
-            this.BtnExcluirUser.Size = new System.Drawing.Size(131, 23);
-            this.BtnExcluirUser.TabIndex = 1;
-            this.BtnExcluirUser.Text = "&Excluir";
-            this.BtnExcluirUser.UseVisualStyleBackColor = true;
-            this.BtnExcluirUser.Click += new System.EventHandler(this.BtnExcluirUser_Click);
+            this.viewConta.HideSelection = false;
+            this.viewConta.Location = new System.Drawing.Point(211, 66);
+            this.viewConta.Name = "viewConta";
+            this.viewConta.Size = new System.Drawing.Size(467, 321);
+            this.viewConta.TabIndex = 3;
+            this.viewConta.UseCompatibleStateImageBehavior = false;
             // 
             // BtnAddUser
             // 
@@ -191,24 +190,25 @@ namespace EstoqueV1
             this.BtnAddUser.UseVisualStyleBackColor = true;
             this.BtnAddUser.Click += new System.EventHandler(this.BtnAddUser_Click);
             // 
-            // viewConta
+            // BtnExcluirUser
             // 
-            this.viewConta.HideSelection = false;
-            this.viewConta.Location = new System.Drawing.Point(211, 66);
-            this.viewConta.Name = "viewConta";
-            this.viewConta.Size = new System.Drawing.Size(467, 321);
-            this.viewConta.TabIndex = 3;
-            this.viewConta.UseCompatibleStateImageBehavior = false;
+            this.BtnExcluirUser.Location = new System.Drawing.Point(38, 200);
+            this.BtnExcluirUser.Name = "BtnExcluirUser";
+            this.BtnExcluirUser.Size = new System.Drawing.Size(131, 23);
+            this.BtnExcluirUser.TabIndex = 1;
+            this.BtnExcluirUser.Text = "&Excluir";
+            this.BtnExcluirUser.UseVisualStyleBackColor = true;
+            this.BtnExcluirUser.Click += new System.EventHandler(this.BtnExcluirUser_Click);
             // 
-            // label2
+            // BtnNewDadosUser
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Underline);
-            this.label2.Location = new System.Drawing.Point(335, 16);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(230, 26);
-            this.label2.TabIndex = 4;
-            this.label2.Text = "Configuração de conta";
+            this.BtnNewDadosUser.Location = new System.Drawing.Point(38, 66);
+            this.BtnNewDadosUser.Name = "BtnNewDadosUser";
+            this.BtnNewDadosUser.Size = new System.Drawing.Size(131, 23);
+            this.BtnNewDadosUser.TabIndex = 0;
+            this.BtnNewDadosUser.Text = "&Alterar dados ";
+            this.BtnNewDadosUser.UseVisualStyleBackColor = true;
+            this.BtnNewDadosUser.Click += new System.EventHandler(this.BtnNewDadosUser_Click);
             // 
             // TabCadItem
             // 
@@ -228,54 +228,14 @@ namespace EstoqueV1
             this.TabCadItem.UseVisualStyleBackColor = true;
             this.TabCadItem.Click += new System.EventHandler(this.TabCadItem_Click);
             // 
-            // BtnCategoriaNova
+            // dataGridView1
             // 
-            this.BtnCategoriaNova.Location = new System.Drawing.Point(695, 110);
-            this.BtnCategoriaNova.Name = "BtnCategoriaNova";
-            this.BtnCategoriaNova.Size = new System.Drawing.Size(131, 23);
-            this.BtnCategoriaNova.TabIndex = 2;
-            this.BtnCategoriaNova.Text = "&Cadastrar item";
-            this.BtnCategoriaNova.UseVisualStyleBackColor = true;
-            this.BtnCategoriaNova.Click += new System.EventHandler(this.BtnCategoriaNova_Click);
-            // 
-            // btnEditar
-            // 
-            this.btnEditar.Location = new System.Drawing.Point(695, 173);
-            this.btnEditar.Name = "btnEditar";
-            this.btnEditar.Size = new System.Drawing.Size(131, 23);
-            this.btnEditar.TabIndex = 3;
-            this.btnEditar.Text = "&Editar ";
-            this.btnEditar.UseVisualStyleBackColor = true;
-            this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(611, 348);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(78, 23);
-            this.button2.TabIndex = 5;
-            this.button2.Text = "&Confirmar";
-            this.button2.UseVisualStyleBackColor = true;
-            // 
-            // BtnEntrada
-            // 
-            this.BtnEntrada.Location = new System.Drawing.Point(18, 85);
-            this.BtnEntrada.Name = "BtnEntrada";
-            this.BtnEntrada.Size = new System.Drawing.Size(131, 38);
-            this.BtnEntrada.TabIndex = 0;
-            this.BtnEntrada.Text = "&Registrar entrada de produtos";
-            this.BtnEntrada.UseVisualStyleBackColor = true;
-            this.BtnEntrada.Click += new System.EventHandler(this.BtnEntrada_Click);
-            // 
-            // btnSaidaItem
-            // 
-            this.btnSaidaItem.Location = new System.Drawing.Point(18, 189);
-            this.btnSaidaItem.Name = "btnSaidaItem";
-            this.btnSaidaItem.Size = new System.Drawing.Size(131, 36);
-            this.btnSaidaItem.TabIndex = 1;
-            this.btnSaidaItem.Text = "&Registrar saída de produtos";
-            this.btnSaidaItem.UseVisualStyleBackColor = true;
-            this.btnSaidaItem.Click += new System.EventHandler(this.btnSaidaItem_Click);
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(192, 68);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(487, 223);
+            this.dataGridView1.TabIndex = 8;
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick_1);
             // 
             // lblTitulo
             // 
@@ -287,14 +247,54 @@ namespace EstoqueV1
             this.lblTitulo.TabIndex = 7;
             this.lblTitulo.Text = "Cadastro";
             // 
-            // dataGridView1
+            // btnSaidaItem
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(192, 68);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(487, 223);
-            this.dataGridView1.TabIndex = 8;
-            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick_1);
+            this.btnSaidaItem.Location = new System.Drawing.Point(18, 189);
+            this.btnSaidaItem.Name = "btnSaidaItem";
+            this.btnSaidaItem.Size = new System.Drawing.Size(131, 36);
+            this.btnSaidaItem.TabIndex = 1;
+            this.btnSaidaItem.Text = "&Registrar saída de produtos";
+            this.btnSaidaItem.UseVisualStyleBackColor = true;
+            this.btnSaidaItem.Click += new System.EventHandler(this.btnSaidaItem_Click);
+            // 
+            // BtnEntrada
+            // 
+            this.BtnEntrada.Location = new System.Drawing.Point(18, 85);
+            this.BtnEntrada.Name = "BtnEntrada";
+            this.BtnEntrada.Size = new System.Drawing.Size(131, 38);
+            this.BtnEntrada.TabIndex = 0;
+            this.BtnEntrada.Text = "&Registrar entrada de produtos";
+            this.BtnEntrada.UseVisualStyleBackColor = true;
+            this.BtnEntrada.Click += new System.EventHandler(this.BtnEntrada_Click);
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(611, 348);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(78, 23);
+            this.button2.TabIndex = 5;
+            this.button2.Text = "&Confirmar";
+            this.button2.UseVisualStyleBackColor = true;
+            // 
+            // btnEditar
+            // 
+            this.btnEditar.Location = new System.Drawing.Point(695, 173);
+            this.btnEditar.Name = "btnEditar";
+            this.btnEditar.Size = new System.Drawing.Size(131, 23);
+            this.btnEditar.TabIndex = 3;
+            this.btnEditar.Text = "&Editar ";
+            this.btnEditar.UseVisualStyleBackColor = true;
+            this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
+            // 
+            // BtnCategoriaNova
+            // 
+            this.BtnCategoriaNova.Location = new System.Drawing.Point(695, 110);
+            this.BtnCategoriaNova.Name = "BtnCategoriaNova";
+            this.BtnCategoriaNova.Size = new System.Drawing.Size(131, 23);
+            this.BtnCategoriaNova.TabIndex = 2;
+            this.BtnCategoriaNova.Text = "&Cadastrar item";
+            this.BtnCategoriaNova.UseVisualStyleBackColor = true;
+            this.BtnCategoriaNova.Click += new System.EventHandler(this.BtnCategoriaNova_Click);
             // 
             // TabMenu
             // 

@@ -20,7 +20,8 @@ namespace EstoqueV1
             txtDataValidade.Mask = "00/00/0000";
         }
 
-        MySqlConnection conn = new MySqlConnection("server=localhost;port=3306;User id=root;database=pacstoque;password=1234");
+        MySqlConnection conn = new MySqlConnection("server=localhost;port=3306;User id=root;database=pacstoque;password=");
+   
 
         private void btnSalvar_Click(object sender, EventArgs e)
         {

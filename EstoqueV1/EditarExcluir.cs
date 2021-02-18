@@ -70,7 +70,11 @@ namespace EstoqueV1
             string carregaProdutos;
             
 
+<<<<<<< Updated upstream
             carregaProdutos = "SELECT IdProduto, nome, categoria, fornecedor, estoque FROM produto";
+=======
+            carregaProdutos = "SELECT IdProduto, nome, categoria, fornecedor, estoque, QtdMinimo, QtdMaximo FROM produto";
+>>>>>>> Stashed changes
             da = new MySqlDataAdapter(carregaProdutos, conn);
             conn.Open();
             ds = new DataSet();
@@ -104,18 +108,19 @@ namespace EstoqueV1
             {
                 try
                 {
-                    if (txtNome.Text != "" && txtEditCat.Text != "" && txtEditFornecedor.Text != "" && txtEditEstoque.Text != "")
+                    int i = 0;
+                    if (txtNome.Text != "" && txtEditCat.Text != "" && txtEditFornecedor.Text != "" && txtEditEstoque.Text != "" && txtqtdMin.Text != "" && txtQtdMax.Text != "")
                     {
 
-                        editProduto = "UPDATE produto SET nome = '" + txtNome.Text + "', categoria = '" + txtEditCat.Text + "', fornecedor = '" + txtEditFornecedor.Text + "', estoque = '" + txtEditEstoque.Text + "' WHERE IdProduto = " + textBox1.Text + "";
+                        editProduto = "UPDATE produto SET nome = '" + txtNome.Text + "', categoria = '" + txtEditCat.Text + "', fornecedor = '" + txtEditFornecedor.Text + "', estoque = '" + txtEditEstoque.Text + "', QtdMinimo = " + txtqtdMin.Text + ", QtdMaximo = " + txtQtdMax.Text + " WHERE IdProduto = " + textBox1.Text + "";
 
                         cmd = new MySqlCommand(editProduto, conn);
                         cmd.CommandType = CommandType.Text;
                         conn.Open();
                         try
                         {
-                            int i = cmd.ExecuteNonQuery();
-                            if (i > 0)
+                            int j = cmd.ExecuteNonQuery();
+                            if (j > 0)
                                 MessageBox.Show("Produto editado com sucesso!");
                         }
                         catch (Exception ex)
@@ -138,21 +143,21 @@ namespace EstoqueV1
                             conn.Open();
                             try
                             {
-                                int i = cmd.ExecuteNonQuery();
-                                if (i > 0)
-                                    MessageBox.Show("Produto editado com sucesso!");
+                                cmd.ExecuteNonQuery();
                             }
                             catch (Exception ex)
                             {
                                 MessageBox.Show("Erro: " + ex.ToString());
+                                i++;
                             }
                             finally
                             {
                                 conn.Close();
                             }
                         }
-                        else if (txtEditCat.Text != "")
-                        {                           
+
+                        if (txtEditCat.Text != "")
+                        {
                             editProduto = "UPDATE produto SET categoria = '" + txtEditCat.Text + "' WHERE IdProduto = " + textBox1.Text + "";
 
                             cmd = new MySqlCommand(editProduto, conn);
@@ -160,20 +165,20 @@ namespace EstoqueV1
                             conn.Open();
                             try
                             {
-                                int i = cmd.ExecuteNonQuery();
-                                if (i > 0)
-                                    MessageBox.Show("Produto editado com sucesso!");
+                                cmd.ExecuteNonQuery();
                             }
                             catch (Exception ex)
                             {
                                 MessageBox.Show("Erro: " + ex.ToString());
+                                i++;
                             }
                             finally
                             {
                                 conn.Close();
                             }
                         }
-                        else if (txtEditFornecedor.Text != "")
+
+                        if (txtEditFornecedor.Text != "")
                         {
                             editProduto = "UPDATE produto SET fornecedor = '" + txtEditFornecedor.Text + "' WHERE IdProduto = " + textBox1.Text + "";
 
@@ -182,20 +187,20 @@ namespace EstoqueV1
                             conn.Open();
                             try
                             {
-                                int i = cmd.ExecuteNonQuery();
-                                if (i > 0)
-                                    MessageBox.Show("Produto editado com sucesso!");
+                                cmd.ExecuteNonQuery(); ;
                             }
                             catch (Exception ex)
                             {
                                 MessageBox.Show("Erro: " + ex.ToString());
+                                i++;
                             }
                             finally
                             {
                                 conn.Close();
                             }
                         }
-                        else if (txtEditEstoque.Text != "")
+
+                        if (txtEditEstoque.Text != "")
                         {
                             editProduto = "UPDATE produto SET estoque = '" + txtEditEstoque.Text + "' WHERE IdProduto = " + textBox1.Text + "";
 
@@ -204,20 +209,70 @@ namespace EstoqueV1
                             conn.Open();
                             try
                             {
-                                int i = cmd.ExecuteNonQuery();
-                                if (i > 0)
-                                    
-                                    MessageBox.Show("Produto editado com sucesso!");                                    
+                                cmd.ExecuteNonQuery();
                             }
                             catch (Exception ex)
                             {
                                 MessageBox.Show("Erro: " + ex.ToString());
+                                i++;
                             }
                             finally
                             {
                                 conn.Close();
                             }
                         }
+
+                        if (txtqtdMin.Text != "")
+                        {
+                            editProduto = "UPDATE produto SET QtdMinimo = " + txtqtdMin.Text + " WHERE IdProduto = " + textBox1.Text + "";
+
+                            cmd = new MySqlCommand(editProduto, conn);
+                            cmd.CommandType = CommandType.Text;
+                            conn.Open();
+                            try
+                            {
+                                cmd.ExecuteNonQuery();
+                            }
+                            catch (Exception ex)
+                            {
+                                MessageBox.Show("Erro: " + ex.ToString());
+                                i++;
+                            }
+                            finally
+                            {
+                                conn.Close();
+                            }
+                        }
+
+                        if (txtQtdMax.Text != "")
+                        {
+                            editProduto = "UPDATE produto SET QtdMaximo = " + txtQtdMax.Text + " WHERE IdProduto = " + textBox1.Text + "";
+
+                            cmd = new MySqlCommand(editProduto, conn);
+                            cmd.CommandType = CommandType.Text;
+                            conn.Open();
+                            try
+                            {
+                                cmd.ExecuteNonQuery();
+                            }
+                            catch (Exception ex)
+                            {
+                                MessageBox.Show("Erro: " + ex.ToString());
+                                i++;
+                            }
+                            finally
+                            {
+                                conn.Close();
+                            }
+                        }
+                    }
+                    if (i >= 1)
+                    {                        
+                        MessageBox.Show("Algumas ou nenhuma informação foi alterada no produto, tente novamente.");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Produto editado com sucesso!");
                     }
                 }
                 catch (FormatException)

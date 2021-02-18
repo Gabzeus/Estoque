@@ -45,6 +45,13 @@ namespace EstoqueV1
             this.lblIdProduto = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
+<<<<<<< Updated upstream
+=======
+            this.label2 = new System.Windows.Forms.Label();
+            this.txtqtdMin = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.txtQtdMax = new System.Windows.Forms.TextBox();
+>>>>>>> Stashed changes
             ((System.ComponentModel.ISupportInitialize)(this.DtgvDadosEstoque)).BeginInit();
             this.SuspendLayout();
             // 
@@ -197,11 +204,56 @@ namespace EstoqueV1
             this.label1.TabIndex = 33;
             this.label1.Text = "(selecionar na tabela abaixo).";
             // 
+<<<<<<< Updated upstream
+=======
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(390, 41);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(100, 13);
+            this.label2.TabIndex = 34;
+            this.label2.Text = "Quantidade Mínima";
+            // 
+            // txtqtdMin
+            // 
+            this.txtqtdMin.Location = new System.Drawing.Point(393, 57);
+            this.txtqtdMin.Name = "txtqtdMin";
+            this.txtqtdMin.Size = new System.Drawing.Size(75, 20);
+            this.txtqtdMin.TabIndex = 35;
+            this.txtqtdMin.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(491, 41);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(101, 13);
+            this.label3.TabIndex = 36;
+            this.label3.Text = "Quantidade Máxima";
+            this.label3.Click += new System.EventHandler(this.label3_Click);
+            // 
+            // txtQtdMax
+            // 
+            this.txtQtdMax.Location = new System.Drawing.Point(494, 57);
+            this.txtQtdMax.Name = "txtQtdMax";
+            this.txtQtdMax.Size = new System.Drawing.Size(75, 20);
+            this.txtQtdMax.TabIndex = 37;
+            this.txtQtdMax.TextChanged += new System.EventHandler(this.textBox3_TextChanged);
+            // 
+>>>>>>> Stashed changes
             // EditarExcluir
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(592, 284);
+<<<<<<< Updated upstream
+=======
+            this.Controls.Add(this.txtQtdMax);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.txtqtdMin);
+            this.Controls.Add(this.label2);
+>>>>>>> Stashed changes
             this.Controls.Add(this.label1);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.lblIdProduto);
@@ -246,5 +298,12 @@ namespace EstoqueV1
         private System.Windows.Forms.Label lblIdProduto;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label1;
+<<<<<<< Updated upstream
+=======
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox txtqtdMin;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.TextBox txtQtdMax;
+>>>>>>> Stashed changes
     }
 }

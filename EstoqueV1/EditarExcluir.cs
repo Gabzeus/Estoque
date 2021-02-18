@@ -70,7 +70,7 @@ namespace EstoqueV1
             string carregaProdutos;
             
 
-            carregaProdutos = "SELECT IdProduto, nome, categoria, fornecedor, estoque FROM produto";
+            carregaProdutos = "SELECT IdProduto, nome, categoria, fornecedor, estoque, QtdMinimo, QtdMaxima FROM produto";
             da = new MySqlDataAdapter(carregaProdutos, conn);
             conn.Open();
             ds = new DataSet();
@@ -231,7 +231,21 @@ namespace EstoqueV1
         private void textBox1_TextChanged_1(object sender, EventArgs e)
         {
 
-        }        
-      
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox2_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox3_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

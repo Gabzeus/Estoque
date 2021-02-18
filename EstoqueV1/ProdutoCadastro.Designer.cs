@@ -36,21 +36,16 @@ namespace EstoqueV1
             this.lblNome = new System.Windows.Forms.Label();
             this.DtgvDadosCad = new System.Windows.Forms.DataGridView();
             this.produtosBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.db_EstoquesDataSet1 = new EstoqueV1.Db_EstoquesDataSet1();
             this.lblCategoria = new System.Windows.Forms.Label();
             this.txtCategoria = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.txtEstoque = new System.Windows.Forms.TextBox();
-            this.db_EstoquesDataSet = new EstoqueV1.Db_EstoquesDataSet();
             this.dbEstoquesDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.label1 = new System.Windows.Forms.Label();
             this.dbEstoquesDataSetBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.dbEstoquesDataSetBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
-            this.produtosTableAdapter = new EstoqueV1.Db_EstoquesDataSet1TableAdapters.ProdutosTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.DtgvDadosCad)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.produtosBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.db_EstoquesDataSet1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.db_EstoquesDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dbEstoquesDataSetBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dbEstoquesDataSetBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dbEstoquesDataSetBindingSource2)).BeginInit();
@@ -66,7 +61,7 @@ namespace EstoqueV1
             // btnSalvar
             // 
             this.btnSalvar.DialogResult = System.Windows.Forms.DialogResult.OK;
-            this.btnSalvar.Location = new System.Drawing.Point(525, 224);
+            this.btnSalvar.Location = new System.Drawing.Point(522, 275);
             this.btnSalvar.Name = "btnSalvar";
             this.btnSalvar.Size = new System.Drawing.Size(75, 23);
             this.btnSalvar.TabIndex = 4;
@@ -77,7 +72,7 @@ namespace EstoqueV1
             // btnCancelar
             // 
             this.btnCancelar.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btnCancelar.Location = new System.Drawing.Point(632, 224);
+            this.btnCancelar.Location = new System.Drawing.Point(633, 275);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(75, 23);
             this.btnCancelar.TabIndex = 5;
@@ -111,12 +106,6 @@ namespace EstoqueV1
             // produtosBindingSource
             // 
             this.produtosBindingSource.DataMember = "Produtos";
-            this.produtosBindingSource.DataSource = this.db_EstoquesDataSet1;
-            // 
-            // db_EstoquesDataSet1
-            // 
-            this.db_EstoquesDataSet1.DataSetName = "Db_EstoquesDataSet1";
-            this.db_EstoquesDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // lblCategoria
             // 
@@ -151,16 +140,6 @@ namespace EstoqueV1
             this.txtEstoque.Size = new System.Drawing.Size(104, 20);
             this.txtEstoque.TabIndex = 9;
             // 
-            // db_EstoquesDataSet
-            // 
-            this.db_EstoquesDataSet.DataSetName = "Db_EstoquesDataSet";
-            this.db_EstoquesDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // dbEstoquesDataSetBindingSource
-            // 
-            this.dbEstoquesDataSetBindingSource.DataSource = this.db_EstoquesDataSet;
-            this.dbEstoquesDataSetBindingSource.Position = 0;
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -170,20 +149,6 @@ namespace EstoqueV1
             this.label1.Size = new System.Drawing.Size(194, 24);
             this.label1.TabIndex = 11;
             this.label1.Text = "Produtos Cadastrados";
-            // 
-            // dbEstoquesDataSetBindingSource1
-            // 
-            this.dbEstoquesDataSetBindingSource1.DataSource = this.db_EstoquesDataSet;
-            this.dbEstoquesDataSetBindingSource1.Position = 0;
-            // 
-            // dbEstoquesDataSetBindingSource2
-            // 
-            this.dbEstoquesDataSetBindingSource2.DataSource = this.db_EstoquesDataSet;
-            this.dbEstoquesDataSetBindingSource2.Position = 0;
-            // 
-            // produtosTableAdapter
-            // 
-            this.produtosTableAdapter.ClearBeforeFill = true;
             // 
             // ProdutoCadastro
             // 
@@ -206,8 +171,6 @@ namespace EstoqueV1
             this.Load += new System.EventHandler(this.CatCadastro_Load);
             ((System.ComponentModel.ISupportInitialize)(this.DtgvDadosCad)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.produtosBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.db_EstoquesDataSet1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.db_EstoquesDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dbEstoquesDataSetBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dbEstoquesDataSetBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dbEstoquesDataSetBindingSource2)).EndInit();

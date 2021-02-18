@@ -48,7 +48,6 @@ namespace EstoqueV1
             this.label4 = new System.Windows.Forms.Label();
             this.txtResponsavel = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.maskedTextBox1 = new System.Windows.Forms.MaskedTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.DtgvEntradaProdutos)).BeginInit();
             this.SuspendLayout();
             // 
@@ -101,6 +100,7 @@ namespace EstoqueV1
             this.txtQtd.Name = "txtQtd";
             this.txtQtd.Size = new System.Drawing.Size(49, 20);
             this.txtQtd.TabIndex = 1;
+            this.txtQtd.TextChanged += new System.EventHandler(this.txtQtd_TextChanged);
             // 
             // txtNome
             // 
@@ -170,7 +170,7 @@ namespace EstoqueV1
             // 
             // txtFornecedor
             // 
-            this.txtFornecedor.Location = new System.Drawing.Point(529, 207);
+            this.txtFornecedor.Location = new System.Drawing.Point(529, 211);
             this.txtFornecedor.Name = "txtFornecedor";
             this.txtFornecedor.Size = new System.Drawing.Size(96, 20);
             this.txtFornecedor.TabIndex = 36;
@@ -178,7 +178,7 @@ namespace EstoqueV1
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(526, 191);
+            this.label3.Location = new System.Drawing.Point(526, 195);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(61, 13);
             this.label3.TabIndex = 37;
@@ -203,33 +203,26 @@ namespace EstoqueV1
             // 
             // txtResponsavel
             // 
-            this.txtResponsavel.Location = new System.Drawing.Point(389, 207);
+            this.txtResponsavel.Location = new System.Drawing.Point(384, 211);
             this.txtResponsavel.Name = "txtResponsavel";
             this.txtResponsavel.Size = new System.Drawing.Size(96, 20);
             this.txtResponsavel.TabIndex = 40;
+            this.txtResponsavel.TextChanged += new System.EventHandler(this.txtResponsavel_TextChanged);
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(386, 191);
+            this.label5.Location = new System.Drawing.Point(384, 195);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(69, 13);
             this.label5.TabIndex = 41;
             this.label5.Text = "Responsável";
-            // 
-            // maskedTextBox1
-            // 
-            this.maskedTextBox1.Location = new System.Drawing.Point(504, 274);
-            this.maskedTextBox1.Name = "maskedTextBox1";
-            this.maskedTextBox1.Size = new System.Drawing.Size(100, 20);
-            this.maskedTextBox1.TabIndex = 42;
             // 
             // AddItens
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(637, 353);
-            this.Controls.Add(this.maskedTextBox1);
             this.Controls.Add(this.txtResponsavel);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.txtId);
@@ -278,6 +271,5 @@ namespace EstoqueV1
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox txtResponsavel;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.MaskedTextBox maskedTextBox1;
     }
 }

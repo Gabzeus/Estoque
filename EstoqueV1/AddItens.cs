@@ -248,5 +248,25 @@ namespace EstoqueV1
             DtgvEntradaProdutos.DataSource = bsource;
             conn.Close();
         }
+
+        private void label6_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label7_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtQtd_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtResponsavel_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

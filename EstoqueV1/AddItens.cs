@@ -16,9 +16,11 @@ namespace EstoqueV1
         public AddItens()
         {
             InitializeComponent();
+            txtEntrada.Mask = "00/00/0000";
+            txtDataValidade.Mask = "00/00/0000";
         }
 
-        MySqlConnection conn = new MySqlConnection("server=localhost;port=3306;User id=root;database=pacstoque;password=");
+        MySqlConnection conn = new MySqlConnection("server=localhost;port=3306;User id=root;database=pacstoque;password=1234");
 
         private void btnSalvar_Click(object sender, EventArgs e)
         {
@@ -265,6 +267,18 @@ namespace EstoqueV1
         }
 
         private void txtResponsavel_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtEntrada_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
+        {
+           
+        }
+
+      
+
+        private void txtDataValidade_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
         {
 
         }

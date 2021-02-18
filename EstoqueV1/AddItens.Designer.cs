@@ -31,7 +31,6 @@ namespace EstoqueV1
         {
             this.lblValor = new System.Windows.Forms.Label();
             this.txtValor = new System.Windows.Forms.TextBox();
-            this.txtEntrada = new System.Windows.Forms.TextBox();
             this.lblEntrada = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.txtQtd = new System.Windows.Forms.TextBox();
@@ -39,7 +38,6 @@ namespace EstoqueV1
             this.lblNome = new System.Windows.Forms.Label();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnSalvar = new System.Windows.Forms.Button();
-            this.txtDataValidade = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.DtgvEntradaProdutos = new System.Windows.Forms.DataGridView();
             this.txtFornecedor = new System.Windows.Forms.TextBox();
@@ -48,6 +46,8 @@ namespace EstoqueV1
             this.label4 = new System.Windows.Forms.Label();
             this.txtResponsavel = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
+            this.txtEntrada = new System.Windows.Forms.MaskedTextBox();
+            this.txtDataValidade = new System.Windows.Forms.MaskedTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.DtgvEntradaProdutos)).BeginInit();
             this.SuspendLayout();
             // 
@@ -67,13 +67,6 @@ namespace EstoqueV1
             this.txtValor.Name = "txtValor";
             this.txtValor.Size = new System.Drawing.Size(49, 20);
             this.txtValor.TabIndex = 2;
-            // 
-            // txtEntrada
-            // 
-            this.txtEntrada.Location = new System.Drawing.Point(529, 86);
-            this.txtEntrada.Name = "txtEntrada";
-            this.txtEntrada.Size = new System.Drawing.Size(96, 20);
-            this.txtEntrada.TabIndex = 3;
             // 
             // lblEntrada
             // 
@@ -140,13 +133,6 @@ namespace EstoqueV1
             this.btnSalvar.Text = "&Salvar";
             this.btnSalvar.UseVisualStyleBackColor = true;
             this.btnSalvar.Click += new System.EventHandler(this.btnSalvar_Click);
-            // 
-            // txtDataValidade
-            // 
-            this.txtDataValidade.Location = new System.Drawing.Point(529, 130);
-            this.txtDataValidade.Name = "txtDataValidade";
-            this.txtDataValidade.Size = new System.Drawing.Size(96, 20);
-            this.txtDataValidade.TabIndex = 33;
             // 
             // label2
             // 
@@ -218,11 +204,29 @@ namespace EstoqueV1
             this.label5.TabIndex = 41;
             this.label5.Text = "Responsável";
             // 
+            // txtEntrada
+            // 
+            this.txtEntrada.Location = new System.Drawing.Point(529, 87);
+            this.txtEntrada.Name = "txtEntrada";
+            this.txtEntrada.Size = new System.Drawing.Size(96, 20);
+            this.txtEntrada.TabIndex = 42;
+            this.txtEntrada.MaskInputRejected += new System.Windows.Forms.MaskInputRejectedEventHandler(this.txtEntrada_MaskInputRejected);
+            // 
+            // txtDataValidade
+            // 
+            this.txtDataValidade.Location = new System.Drawing.Point(529, 130);
+            this.txtDataValidade.Name = "txtDataValidade";
+            this.txtDataValidade.Size = new System.Drawing.Size(100, 20);
+            this.txtDataValidade.TabIndex = 43;
+            this.txtDataValidade.MaskInputRejected += new System.Windows.Forms.MaskInputRejectedEventHandler(this.txtDataValidade_MaskInputRejected);
+            // 
             // AddItens
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(637, 353);
+            this.Controls.Add(this.txtDataValidade);
+            this.Controls.Add(this.txtEntrada);
             this.Controls.Add(this.txtResponsavel);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.txtId);
@@ -230,11 +234,9 @@ namespace EstoqueV1
             this.Controls.Add(this.txtFornecedor);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.DtgvEntradaProdutos);
-            this.Controls.Add(this.txtDataValidade);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.lblValor);
             this.Controls.Add(this.txtValor);
-            this.Controls.Add(this.txtEntrada);
             this.Controls.Add(this.lblEntrada);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtQtd);
@@ -254,7 +256,6 @@ namespace EstoqueV1
         #endregion
         private System.Windows.Forms.Label lblValor;
         private System.Windows.Forms.TextBox txtValor;
-        private System.Windows.Forms.TextBox txtEntrada;
         private System.Windows.Forms.Label lblEntrada;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtQtd;
@@ -262,7 +263,6 @@ namespace EstoqueV1
         private System.Windows.Forms.Label lblNome;
         private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.Button btnSalvar;
-        private System.Windows.Forms.TextBox txtDataValidade;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.DataGridView DtgvEntradaProdutos;
         private System.Windows.Forms.TextBox txtFornecedor;
@@ -271,5 +271,7 @@ namespace EstoqueV1
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox txtResponsavel;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.MaskedTextBox txtEntrada;
+        private System.Windows.Forms.MaskedTextBox txtDataValidade;
     }
 }

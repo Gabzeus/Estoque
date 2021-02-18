@@ -38,7 +38,7 @@ namespace EstoqueV1
             string carregaProdutos;
 
 
-            MySqlConnection conn = new MySqlConnection("server=localhost;port=3306;User id=root;database=pacstoque;password=");
+            MySqlConnection conn = new MySqlConnection("server=localhost;port=3306;User id=root;database=pacstoque;password=1234");
 
             carregaProdutos = "SELECT * FROM produto";
             da = new MySqlDataAdapter(carregaProdutos, conn);
@@ -78,7 +78,7 @@ namespace EstoqueV1
         {
             string addProduto = "INSERT INTO produto (nome, categoria, estoque) VALUES ('" + txtNome.Text + "', '" + txtCategoria.Text + "', '" + txtEstoque.Text + "')";
 
-            MySqlConnection conn = new MySqlConnection("server=localhost;port=3306;User id=root;database=pacstoque;password=");
+            MySqlConnection conn = new MySqlConnection("server=localhost;port=3306;User id=root;database=pacstoque;password=1234");
 
             MySqlCommand cmd = new MySqlCommand(addProduto, conn);
             cmd.CommandType = CommandType.Text;

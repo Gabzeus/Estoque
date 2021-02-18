@@ -64,7 +64,7 @@ namespace EstoqueV1
             this.btnSalvar.Location = new System.Drawing.Point(522, 275);
             this.btnSalvar.Name = "btnSalvar";
             this.btnSalvar.Size = new System.Drawing.Size(75, 23);
-            this.btnSalvar.TabIndex = 4;
+            this.btnSalvar.TabIndex = 3;
             this.btnSalvar.Text = "&Salvar";
             this.btnSalvar.UseVisualStyleBackColor = true;
             this.btnSalvar.Click += new System.EventHandler(this.btnSalvar_Click);
@@ -75,7 +75,7 @@ namespace EstoqueV1
             this.btnCancelar.Location = new System.Drawing.Point(633, 275);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(75, 23);
-            this.btnCancelar.TabIndex = 5;
+            this.btnCancelar.TabIndex = 4;
             this.btnCancelar.Text = "&Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
             // 
@@ -138,7 +138,7 @@ namespace EstoqueV1
             this.txtEstoque.Location = new System.Drawing.Point(547, 176);
             this.txtEstoque.Name = "txtEstoque";
             this.txtEstoque.Size = new System.Drawing.Size(104, 20);
-            this.txtEstoque.TabIndex = 9;
+            this.txtEstoque.TabIndex = 2;
             // 
             // label1
             // 

@@ -36,10 +36,10 @@ namespace EstoqueV1
             this.txtNome = new System.Windows.Forms.TextBox();
             this.lblNome = new System.Windows.Forms.Label();
             this.lblSaida = new System.Windows.Forms.Label();
-            this.txtSaida = new System.Windows.Forms.TextBox();
             this.txtValor = new System.Windows.Forms.TextBox();
             this.lblValor = new System.Windows.Forms.Label();
             this.viewSaida = new System.Windows.Forms.ListView();
+            this.txtSaida = new System.Windows.Forms.MaskedTextBox();
             this.SuspendLayout();
             // 
             // btnCancelar
@@ -103,13 +103,6 @@ namespace EstoqueV1
             this.lblSaida.TabIndex = 17;
             this.lblSaida.Text = "Data saida";
             // 
-            // txtSaida
-            // 
-            this.txtSaida.Location = new System.Drawing.Point(289, 40);
-            this.txtSaida.Name = "txtSaida";
-            this.txtSaida.Size = new System.Drawing.Size(96, 20);
-            this.txtSaida.TabIndex = 3;
-            // 
             // txtValor
             // 
             this.txtValor.Location = new System.Drawing.Point(227, 40);
@@ -135,15 +128,23 @@ namespace EstoqueV1
             this.viewSaida.TabIndex = 21;
             this.viewSaida.UseCompatibleStateImageBehavior = false;
             // 
+            // txtSaida
+            // 
+            this.txtSaida.Location = new System.Drawing.Point(285, 40);
+            this.txtSaida.Name = "txtSaida";
+            this.txtSaida.Size = new System.Drawing.Size(100, 20);
+            this.txtSaida.TabIndex = 22;
+            this.txtSaida.MaskInputRejected += new System.Windows.Forms.MaskInputRejectedEventHandler(this.txtSaida_MaskInputRejected);
+            // 
             // ControladorSaida
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(428, 352);
+            this.Controls.Add(this.txtSaida);
             this.Controls.Add(this.viewSaida);
             this.Controls.Add(this.lblValor);
             this.Controls.Add(this.txtValor);
-            this.Controls.Add(this.txtSaida);
             this.Controls.Add(this.lblSaida);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtQtd);
@@ -154,6 +155,7 @@ namespace EstoqueV1
             this.Name = "ControladorSaida";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Saida de itens";
+            this.Load += new System.EventHandler(this.ControladorSaida_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -167,9 +169,9 @@ namespace EstoqueV1
         private System.Windows.Forms.TextBox txtNome;
         private System.Windows.Forms.Label lblNome;
         private System.Windows.Forms.Label lblSaida;
-        private System.Windows.Forms.TextBox txtSaida;
         private System.Windows.Forms.TextBox txtValor;
         private System.Windows.Forms.Label lblValor;
         private System.Windows.Forms.ListView viewSaida;
+        private System.Windows.Forms.MaskedTextBox txtSaida;
     }
 }

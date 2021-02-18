@@ -18,7 +18,7 @@ namespace EstoqueV1
             InitializeComponent();
         }
 
-        MySqlConnection conn = new MySqlConnection("server=localhost;port=3306;User id=root;database=pacstoque;password=");
+        MySqlConnection conn = new MySqlConnection("server=localhost;port=3306;User id=root;database=pacstoque;password=1234");
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {

@@ -15,6 +15,17 @@ namespace EstoqueV1
         public ControladorSaida()
         {
             InitializeComponent();
+            txtSaida.Mask = "00/00/0000";
+        }
+
+        private void ControladorSaida_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtSaida_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
+        {
+
         }
     }
 }

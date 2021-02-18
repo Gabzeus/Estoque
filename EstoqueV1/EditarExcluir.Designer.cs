@@ -31,7 +31,6 @@ namespace EstoqueV1
         {
             this.DtgvDadosEstoque = new System.Windows.Forms.DataGridView();
             this.btnCancelar = new System.Windows.Forms.Button();
-            this.btnSalvar = new System.Windows.Forms.Button();
             this.lblCategoria = new System.Windows.Forms.Label();
             this.txtNome = new System.Windows.Forms.TextBox();
             this.lblNome = new System.Windows.Forms.Label();
@@ -45,13 +44,10 @@ namespace EstoqueV1
             this.lblIdProduto = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-<<<<<<< Updated upstream
-=======
             this.label2 = new System.Windows.Forms.Label();
             this.txtqtdMin = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
             this.txtQtdMax = new System.Windows.Forms.TextBox();
->>>>>>> Stashed changes
+            this.label4 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.DtgvDadosEstoque)).BeginInit();
             this.SuspendLayout();
             // 
@@ -70,27 +66,17 @@ namespace EstoqueV1
             // btnCancelar
             // 
             this.btnCancelar.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btnCancelar.Location = new System.Drawing.Point(25, 244);
+            this.btnCancelar.Location = new System.Drawing.Point(505, 244);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(75, 23);
             this.btnCancelar.TabIndex = 7;
             this.btnCancelar.Text = "&Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
             // 
-            // btnSalvar
-            // 
-            this.btnSalvar.DialogResult = System.Windows.Forms.DialogResult.OK;
-            this.btnSalvar.Location = new System.Drawing.Point(393, 244);
-            this.btnSalvar.Name = "btnSalvar";
-            this.btnSalvar.Size = new System.Drawing.Size(75, 23);
-            this.btnSalvar.TabIndex = 6;
-            this.btnSalvar.Text = "&Salvar";
-            this.btnSalvar.UseVisualStyleBackColor = true;
-            // 
             // lblCategoria
             // 
             this.lblCategoria.AutoSize = true;
-            this.lblCategoria.Location = new System.Drawing.Point(149, 41);
+            this.lblCategoria.Location = new System.Drawing.Point(152, 41);
             this.lblCategoria.Name = "lblCategoria";
             this.lblCategoria.Size = new System.Drawing.Size(52, 13);
             this.lblCategoria.TabIndex = 23;
@@ -115,7 +101,7 @@ namespace EstoqueV1
             // btnExcluir
             // 
             this.btnExcluir.DialogResult = System.Windows.Forms.DialogResult.OK;
-            this.btnExcluir.Location = new System.Drawing.Point(474, 70);
+            this.btnExcluir.Location = new System.Drawing.Point(308, 244);
             this.btnExcluir.Name = "btnExcluir";
             this.btnExcluir.Size = new System.Drawing.Size(75, 23);
             this.btnExcluir.TabIndex = 5;
@@ -125,7 +111,7 @@ namespace EstoqueV1
             // 
             // txtEditFornecedor
             // 
-            this.txtEditFornecedor.Location = new System.Drawing.Point(269, 57);
+            this.txtEditFornecedor.Location = new System.Drawing.Point(264, 57);
             this.txtEditFornecedor.Name = "txtEditFornecedor";
             this.txtEditFornecedor.Size = new System.Drawing.Size(70, 20);
             this.txtEditFornecedor.TabIndex = 2;
@@ -150,7 +136,7 @@ namespace EstoqueV1
             // lblQtd
             // 
             this.lblQtd.AutoSize = true;
-            this.lblQtd.Location = new System.Drawing.Point(266, 41);
+            this.lblQtd.Location = new System.Drawing.Point(261, 41);
             this.lblQtd.Name = "lblQtd";
             this.lblQtd.Size = new System.Drawing.Size(61, 13);
             this.lblQtd.TabIndex = 30;
@@ -159,7 +145,7 @@ namespace EstoqueV1
             // btnEditar
             // 
             this.btnEditar.DialogResult = System.Windows.Forms.DialogResult.OK;
-            this.btnEditar.Location = new System.Drawing.Point(474, 25);
+            this.btnEditar.Location = new System.Drawing.Point(389, 244);
             this.btnEditar.Name = "btnEditar";
             this.btnEditar.Size = new System.Drawing.Size(75, 23);
             this.btnEditar.TabIndex = 4;
@@ -169,7 +155,7 @@ namespace EstoqueV1
             // 
             // txtEditCat
             // 
-            this.txtEditCat.Location = new System.Drawing.Point(152, 57);
+            this.txtEditCat.Location = new System.Drawing.Point(155, 57);
             this.txtEditCat.Name = "txtEditCat";
             this.txtEditCat.Size = new System.Drawing.Size(86, 20);
             this.txtEditCat.TabIndex = 1;
@@ -204,12 +190,10 @@ namespace EstoqueV1
             this.label1.TabIndex = 33;
             this.label1.Text = "(selecionar na tabela abaixo).";
             // 
-<<<<<<< Updated upstream
-=======
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(390, 41);
+            this.label2.Location = new System.Drawing.Point(445, 64);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(100, 13);
             this.label2.TabIndex = 34;
@@ -217,43 +201,36 @@ namespace EstoqueV1
             // 
             // txtqtdMin
             // 
-            this.txtqtdMin.Location = new System.Drawing.Point(393, 57);
+            this.txtqtdMin.Location = new System.Drawing.Point(551, 61);
             this.txtqtdMin.Name = "txtqtdMin";
-            this.txtqtdMin.Size = new System.Drawing.Size(75, 20);
-            this.txtqtdMin.TabIndex = 35;
-            this.txtqtdMin.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(491, 41);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(101, 13);
-            this.label3.TabIndex = 36;
-            this.label3.Text = "Quantidade Máxima";
-            this.label3.Click += new System.EventHandler(this.label3_Click);
+            this.txtqtdMin.Size = new System.Drawing.Size(28, 20);
+            this.txtqtdMin.TabIndex = 2;
             // 
             // txtQtdMax
             // 
-            this.txtQtdMax.Location = new System.Drawing.Point(494, 57);
+            this.txtQtdMax.Location = new System.Drawing.Point(551, 38);
             this.txtQtdMax.Name = "txtQtdMax";
-            this.txtQtdMax.Size = new System.Drawing.Size(75, 20);
-            this.txtQtdMax.TabIndex = 37;
-            this.txtQtdMax.TextChanged += new System.EventHandler(this.textBox3_TextChanged);
+            this.txtQtdMax.Size = new System.Drawing.Size(28, 20);
+            this.txtQtdMax.TabIndex = 0;
             // 
->>>>>>> Stashed changes
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(444, 41);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(101, 13);
+            this.label4.TabIndex = 35;
+            this.label4.Text = "Quantidade Máxima";
+            // 
             // EditarExcluir
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(592, 284);
-<<<<<<< Updated upstream
-=======
+            this.Controls.Add(this.label4);
             this.Controls.Add(this.txtQtdMax);
-            this.Controls.Add(this.label3);
             this.Controls.Add(this.txtqtdMin);
             this.Controls.Add(this.label2);
->>>>>>> Stashed changes
             this.Controls.Add(this.label1);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.lblIdProduto);
@@ -266,7 +243,6 @@ namespace EstoqueV1
             this.Controls.Add(this.btnExcluir);
             this.Controls.Add(this.DtgvDadosEstoque);
             this.Controls.Add(this.btnCancelar);
-            this.Controls.Add(this.btnSalvar);
             this.Controls.Add(this.lblCategoria);
             this.Controls.Add(this.txtNome);
             this.Controls.Add(this.lblNome);
@@ -284,7 +260,6 @@ namespace EstoqueV1
 
         private System.Windows.Forms.DataGridView DtgvDadosEstoque;
         private System.Windows.Forms.Button btnCancelar;
-        private System.Windows.Forms.Button btnSalvar;
         private System.Windows.Forms.Label lblCategoria;
         private System.Windows.Forms.TextBox txtNome;
         private System.Windows.Forms.Label lblNome;
@@ -298,12 +273,9 @@ namespace EstoqueV1
         private System.Windows.Forms.Label lblIdProduto;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label1;
-<<<<<<< Updated upstream
-=======
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtqtdMin;
-        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txtQtdMax;
->>>>>>> Stashed changes
+        private System.Windows.Forms.Label label4;
     }
 }

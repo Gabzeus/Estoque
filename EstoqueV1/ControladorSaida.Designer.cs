@@ -46,17 +46,9 @@ namespace EstoqueV1
             this.txtQtdRemovida = new System.Windows.Forms.TextBox();
             this.txtNome2 = new System.Windows.Forms.TextBox();
             this.lblNome = new System.Windows.Forms.Label();
-<<<<<<< Updated upstream
-            this.lblSaida = new System.Windows.Forms.Label();
-            this.txtSaida = new System.Windows.Forms.TextBox();
-            this.txtValor = new System.Windows.Forms.TextBox();
-            this.lblValor = new System.Windows.Forms.Label();
-            this.viewSaida = new System.Windows.Forms.ListView();
-=======
             this.mtxtEntrada = new System.Windows.Forms.MaskedTextBox();
             this.mtxtValidade = new System.Windows.Forms.MaskedTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.DtgvEntradaProdutos)).BeginInit();
->>>>>>> Stashed changes
             this.SuspendLayout();
             // 
             // btnCancelar
@@ -143,18 +135,7 @@ namespace EstoqueV1
             this.DtgvEntradaProdutos.TabIndex = 52;
             this.DtgvEntradaProdutos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DtgvEntradaProdutos_CellContentClick);
             // 
-<<<<<<< Updated upstream
-            // txtSaida
-            // 
-            this.txtSaida.Location = new System.Drawing.Point(289, 40);
-            this.txtSaida.Name = "txtSaida";
-            this.txtSaida.Size = new System.Drawing.Size(96, 20);
-            this.txtSaida.TabIndex = 3;
-            // 
-            // txtValor
-=======
             // label2
->>>>>>> Stashed changes
             // 
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(526, 116);
@@ -224,8 +205,6 @@ namespace EstoqueV1
             this.lblNome.TabIndex = 47;
             this.lblNome.Text = "Nome do produto";
             // 
-<<<<<<< Updated upstream
-=======
             // mtxtEntrada
             // 
             this.mtxtEntrada.Location = new System.Drawing.Point(529, 88);
@@ -240,19 +219,10 @@ namespace EstoqueV1
             this.mtxtValidade.Size = new System.Drawing.Size(100, 20);
             this.mtxtValidade.TabIndex = 60;
             // 
->>>>>>> Stashed changes
             // ControladorSaida
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-<<<<<<< Updated upstream
-            this.ClientSize = new System.Drawing.Size(428, 352);
-            this.Controls.Add(this.viewSaida);
-            this.Controls.Add(this.lblValor);
-            this.Controls.Add(this.txtValor);
-            this.Controls.Add(this.txtSaida);
-            this.Controls.Add(this.lblSaida);
-=======
             this.ClientSize = new System.Drawing.Size(642, 352);
             this.Controls.Add(this.mtxtValidade);
             this.Controls.Add(this.mtxtEntrada);
@@ -267,7 +237,6 @@ namespace EstoqueV1
             this.Controls.Add(this.lblValor);
             this.Controls.Add(this.txtValor2);
             this.Controls.Add(this.lblEntrada);
->>>>>>> Stashed changes
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtQtdRemovida);
             this.Controls.Add(this.txtNome2);
@@ -277,11 +246,8 @@ namespace EstoqueV1
             this.Name = "ControladorSaida";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Saida de itens";
-<<<<<<< Updated upstream
-=======
             this.Load += new System.EventHandler(this.ControladorSaida_Load);
             ((System.ComponentModel.ISupportInitialize)(this.DtgvEntradaProdutos)).EndInit();
->>>>>>> Stashed changes
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -305,15 +271,8 @@ namespace EstoqueV1
         private System.Windows.Forms.TextBox txtQtdRemovida;
         private System.Windows.Forms.TextBox txtNome2;
         private System.Windows.Forms.Label lblNome;
-<<<<<<< Updated upstream
-        private System.Windows.Forms.Label lblSaida;
-        private System.Windows.Forms.TextBox txtSaida;
-        private System.Windows.Forms.TextBox txtValor;
-        private System.Windows.Forms.Label lblValor;
-        private System.Windows.Forms.ListView viewSaida;
-=======
         private System.Windows.Forms.MaskedTextBox mtxtEntrada;
         private System.Windows.Forms.MaskedTextBox mtxtValidade;
->>>>>>> Stashed changes
+
     }
 }

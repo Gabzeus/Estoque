@@ -69,12 +69,8 @@ namespace EstoqueV1
             DataSet ds = null;
             string carregaProdutos;
             
-
-<<<<<<< Updated upstream
-            carregaProdutos = "SELECT IdProduto, nome, categoria, fornecedor, estoque FROM produto";
-=======
             carregaProdutos = "SELECT IdProduto, nome, categoria, fornecedor, estoque, QtdMinimo, QtdMaximo FROM produto";
->>>>>>> Stashed changes
+
             da = new MySqlDataAdapter(carregaProdutos, conn);
             conn.Open();
             ds = new DataSet();

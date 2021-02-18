@@ -16,8 +16,6 @@ namespace EstoqueV1
         public ControladorSaida()
         {
             InitializeComponent();
-<<<<<<< Updated upstream
-=======
             mtxtEntrada.Mask = "00/00/0000";
             mtxtValidade.Mask = "00/00/0000";
         }
@@ -46,7 +44,6 @@ namespace EstoqueV1
         private void txtSaida_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
         {
 
->>>>>>> Stashed changes
         }
 
         private void txtNome2_TextChanged(object sender, EventArgs e)

@@ -32,30 +32,12 @@ namespace EstoqueV1
             // TODO: esta linha de código carrega dados na tabela 'db_EstoquesDataSet1.Produtos'. Você pode movê-la ou removê-la conforme necessário.
             //this.produtosTableAdapter.Fill(this.db_EstoquesDataSet1.Produtos);
 
-<<<<<<< Updated upstream
-=======
             MySqlDataAdapter da;
             BindingSource bsource = new BindingSource();
             DataSet ds = null;
             string carregaProdutos;
 
-            // select dataValidade from produtos
-
-            List<DateTime> datasValidade = new List<DateTime>();
-            DateTime dataHoje = DateTime.Today;
-
-            // dr(read)
-            // { datasValidade.Add(["dataValidade"])
-
-            foreach (var item in datasValidade)
-            {
-
-                DateTime dataValidadeSubtraida = item.AddDays(-3);
-                if (dataHoje >= dataValidadeSubtraida)
-                {
-                   /// Notificação!!!!
-                }
-            }
+            // select dataValidade from produtos          
 
             MySqlConnection conn = new MySqlConnection("server=localhost;port=3306;User id=root;database=pacstoque;password=");
             
@@ -69,8 +51,6 @@ namespace EstoqueV1
             bsource.DataSource = ds.Tables["Produtos"];
             DtgvDadosCad.DataSource = bsource;
             conn.Close();
-
->>>>>>> Stashed changes
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)

@@ -30,18 +30,18 @@ namespace EstoqueV1
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend3 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.BtnCategoriaNova = new System.Windows.Forms.Button();
             this.btnEditar = new System.Windows.Forms.Button();
             this.TabMenu = new System.Windows.Forms.TabControl();
             this.TabCadItem = new System.Windows.Forms.TabPage();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.lblTitulo = new System.Windows.Forms.Label();
             this.btnSaidaItem = new System.Windows.Forms.Button();
             this.BtnEntrada = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
-            this.BtnExcluirCad = new System.Windows.Forms.Button();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.label1 = new System.Windows.Forms.Label();
             this.viewEstoque = new System.Windows.Forms.ListView();
@@ -63,15 +63,14 @@ namespace EstoqueV1
             this.BtnCheckQtd = new System.Windows.Forms.Button();
             this.BtnAttGrafico = new System.Windows.Forms.Button();
             this.programBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.TabMenu.SuspendLayout();
             this.TabCadItem.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.tabPage2.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.programBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // BtnCategoriaNova
@@ -113,7 +112,6 @@ namespace EstoqueV1
             this.TabCadItem.Controls.Add(this.btnSaidaItem);
             this.TabCadItem.Controls.Add(this.BtnEntrada);
             this.TabCadItem.Controls.Add(this.button2);
-            this.TabCadItem.Controls.Add(this.BtnExcluirCad);
             this.TabCadItem.Controls.Add(this.btnEditar);
             this.TabCadItem.Controls.Add(this.BtnCategoriaNova);
             this.TabCadItem.Location = new System.Drawing.Point(4, 22);
@@ -124,6 +122,15 @@ namespace EstoqueV1
             this.TabCadItem.Text = "Cadastro item";
             this.TabCadItem.UseVisualStyleBackColor = true;
             this.TabCadItem.Click += new System.EventHandler(this.TabCadItem_Click);
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(192, 68);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(487, 223);
+            this.dataGridView1.TabIndex = 8;
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick_1);
             // 
             // lblTitulo
             // 
@@ -163,16 +170,6 @@ namespace EstoqueV1
             this.button2.TabIndex = 5;
             this.button2.Text = "&Confirmar";
             this.button2.UseVisualStyleBackColor = true;
-            // 
-            // BtnExcluirCad
-            // 
-            this.BtnExcluirCad.Location = new System.Drawing.Point(695, 240);
-            this.BtnExcluirCad.Name = "BtnExcluirCad";
-            this.BtnExcluirCad.Size = new System.Drawing.Size(131, 23);
-            this.BtnExcluirCad.TabIndex = 4;
-            this.BtnExcluirCad.Text = "&Excluir";
-            this.BtnExcluirCad.UseVisualStyleBackColor = true;
-            this.BtnExcluirCad.Click += new System.EventHandler(this.BtnExcluirCad_Click_1);
             // 
             // tabPage2
             // 
@@ -332,16 +329,16 @@ namespace EstoqueV1
             // 
             // chart1
             // 
-            chartArea3.Name = "ChartArea1";
-            this.chart1.ChartAreas.Add(chartArea3);
-            legend3.Name = "Legend1";
-            this.chart1.Legends.Add(legend3);
+            chartArea1.Name = "ChartArea1";
+            this.chart1.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            this.chart1.Legends.Add(legend1);
             this.chart1.Location = new System.Drawing.Point(313, 79);
             this.chart1.Name = "chart1";
-            series3.ChartArea = "ChartArea1";
-            series3.Legend = "Legend1";
-            series3.Name = "Series1";
-            this.chart1.Series.Add(series3);
+            series1.ChartArea = "ChartArea1";
+            series1.Legend = "Legend1";
+            series1.Name = "Series1";
+            this.chart1.Series.Add(series1);
             this.chart1.Size = new System.Drawing.Size(300, 300);
             this.chart1.TabIndex = 5;
             this.chart1.Text = "chart1";
@@ -395,15 +392,6 @@ namespace EstoqueV1
             this.BtnAttGrafico.UseVisualStyleBackColor = true;
             this.BtnAttGrafico.Click += new System.EventHandler(this.BtnAttGrafico_Click);
             // 
-            // dataGridView1
-            // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(192, 68);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(487, 223);
-            this.dataGridView1.TabIndex = 8;
-            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick_1);
-            // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -417,6 +405,7 @@ namespace EstoqueV1
             this.TabMenu.ResumeLayout(false);
             this.TabCadItem.ResumeLayout(false);
             this.TabCadItem.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
             this.tabPage1.ResumeLayout(false);
@@ -425,7 +414,6 @@ namespace EstoqueV1
             this.tabPage3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.programBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -436,7 +424,6 @@ namespace EstoqueV1
         private System.Windows.Forms.BindingSource programBindingSource;
         private System.Windows.Forms.TabControl TabMenu;
         private System.Windows.Forms.TabPage TabCadItem;
-        private System.Windows.Forms.Button BtnExcluirCad;
         private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button3;

@@ -32,6 +32,24 @@ namespace EstoqueV1
             // TODO: esta linha de código carrega dados na tabela 'db_EstoquesDataSet1.Produtos'. Você pode movê-la ou removê-la conforme necessário.
             //this.produtosTableAdapter.Fill(this.db_EstoquesDataSet1.Produtos);
 
+            MySqlDataAdapter da;
+            BindingSource bsource = new BindingSource();
+            DataSet ds = null;
+            string carregaProdutos;
+
+
+            MySqlConnection conn = new MySqlConnection("server=localhost;port=3306;User id=root;database=pacstoque;password=");
+
+            carregaProdutos = "SELECT * FROM produto";
+            da = new MySqlDataAdapter(carregaProdutos, conn);
+            conn.Open();
+            ds = new DataSet();
+            MySqlCommandBuilder commandBuilder = new MySqlCommandBuilder(da);
+            da.Fill(ds, "Produtos");
+            bsource.DataSource = ds.Tables["Produtos"];
+            DtgvDadosCad.DataSource = bsource;
+            conn.Close();
+
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)

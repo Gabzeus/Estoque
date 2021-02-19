@@ -77,7 +77,7 @@ namespace EstoqueV1
 
         private void btnSalvar_Click(object sender, EventArgs e)
         {
-            string addProduto = "INSERT INTO produto (nome, categoria, estoque) VALUES ('" + txtNome.Text + "', '" + txtCategoria.Text + "', '" + txtEstoque.Text + "')";
+            string addProduto = "INSERT INTO produto (nome, categoria, estoque, quantidade) VALUES ('" + txtNome.Text + "', '" + txtCategoria.Text + "', '" + txtEstoque.Text + "', '0')";
 
             MySqlConnection conn = new MySqlConnection("server=localhost;port=3306;User id=root;database=pacstoque;password=");
 

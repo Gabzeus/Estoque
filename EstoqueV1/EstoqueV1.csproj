@@ -15,6 +15,7 @@
     <Deterministic>true</Deterministic>
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
     <PublishUrl>publish\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
@@ -27,7 +28,6 @@
     <MapFileExtensions>true</MapFileExtensions>
     <ApplicationRevision>0</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
-    <IsWebBootstrapper>false</IsWebBootstrapper>
     <UseApplicationTrust>false</UseApplicationTrust>
     <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
@@ -151,118 +151,124 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AddItens.cs">
+    <Compile Include="Model\Conta.cs" />
+    <Compile Include="Model\Estoque.cs" />
+    <Compile Include="Model\ExcluirItensAdm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AddItens.Designer.cs">
+    <Compile Include="Model\ExcluirItensAdm.Designer.cs">
+      <DependentUpon>ExcluirItensAdm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Model\ICategoria.cs" />
+    <Compile Include="Model\IConta.cs" />
+    <Compile Include="Model\IEstoque.cs" />
+    <Compile Include="Model\IProduto.cs" />
+    <Compile Include="Model\Produto.cs" />
+    <Compile Include="View\AddItens.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\AddItens.Designer.cs">
       <DependentUpon>AddItens.cs</DependentUpon>
     </Compile>
-    <Compile Include="AddUser.cs">
+    <Compile Include="View\AddUser.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AddUser.Designer.cs">
+    <Compile Include="View\AddUser.Designer.cs">
       <DependentUpon>AddUser.cs</DependentUpon>
     </Compile>
-    <Compile Include="ApplicationDbContext.cs" />
-    <Compile Include="Db_EstoquesDataSet1.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Db_EstoquesDataSet1.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="Historico.cs">
+    <Compile Include="Model\ApplicationDbContext.cs" />
+    <Compile Include="View\Historico.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Historico.Designer.cs">
+    <Compile Include="View\Historico.Designer.cs">
       <DependentUpon>Historico.cs</DependentUpon>
     </Compile>
-    <Compile Include="NotificaQtd.cs" />
-    <Compile Include="Notificações.cs">
+    <Compile Include="Model\NotificaQtd.cs" />
+    <Compile Include="View\Notificações.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Notificações.Designer.cs">
+    <Compile Include="View\Notificações.Designer.cs">
       <DependentUpon>Notificações.cs</DependentUpon>
     </Compile>
-    <Compile Include="ProdutoCadastro.cs">
+    <Compile Include="View\ProdutoCadastro.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ProdutoCadastro.Designer.cs">
+    <Compile Include="View\ProdutoCadastro.Designer.cs">
       <DependentUpon>ProdutoCadastro.cs</DependentUpon>
     </Compile>
-    <Compile Include="Categoria.cs" />
-    <Compile Include="ControladorSaida.cs">
+    <Compile Include="Model\Categoria.cs" />
+    <Compile Include="View\ControladorSaida.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ControladorSaida.Designer.cs">
+    <Compile Include="View\ControladorSaida.Designer.cs">
       <DependentUpon>ControladorSaida.cs</DependentUpon>
     </Compile>
-    <Compile Include="ControladorUser.cs">
+    <Compile Include="View\ControladorUser.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ControladorUser.Designer.cs">
+    <Compile Include="View\ControladorUser.Designer.cs">
       <DependentUpon>ControladorUser.cs</DependentUpon>
     </Compile>
-    <Compile Include="Db_EstoquesDataSet.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Db_EstoquesDataSet.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="EditarExcluir.cs">
+    <Compile Include="View\EditarExcluir.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="EditarExcluir.Designer.cs">
+    <Compile Include="View\EditarExcluir.Designer.cs">
       <DependentUpon>EditarExcluir.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form1.cs">
+    <Compile Include="View\Form1.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
+    <Compile Include="View\Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form2.cs">
+    <Compile Include="View\Form2.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form2.Designer.cs">
+    <Compile Include="View\Form2.Designer.cs">
       <DependentUpon>Form2.cs</DependentUpon>
     </Compile>
-    <Compile Include="NewEstoq.cs">
+    <Compile Include="View\NewEstoq.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="NewEstoq.Designer.cs">
+    <Compile Include="View\NewEstoq.Designer.cs">
       <DependentUpon>NewEstoq.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="AddItens.resx">
+    <EmbeddedResource Include="Model\ExcluirItensAdm.resx">
+      <DependentUpon>ExcluirItensAdm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\AddItens.resx">
       <DependentUpon>AddItens.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="AddUser.resx">
+    <EmbeddedResource Include="View\AddUser.resx">
       <DependentUpon>AddUser.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Historico.resx">
+    <EmbeddedResource Include="View\Historico.resx">
       <DependentUpon>Historico.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Notificações.resx">
+    <EmbeddedResource Include="View\Notificações.resx">
       <DependentUpon>Notificações.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ProdutoCadastro.resx">
+    <EmbeddedResource Include="View\ProdutoCadastro.resx">
       <DependentUpon>ProdutoCadastro.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ControladorSaida.resx">
+    <EmbeddedResource Include="View\ControladorSaida.resx">
       <DependentUpon>ControladorSaida.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ControladorUser.resx">
+    <EmbeddedResource Include="View\ControladorUser.resx">
       <DependentUpon>ControladorUser.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="EditarExcluir.resx">
+    <EmbeddedResource Include="View\EditarExcluir.resx">
       <DependentUpon>EditarExcluir.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form1.resx">
+    <EmbeddedResource Include="View\Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form2.resx">
+    <EmbeddedResource Include="View\Form2.resx">
       <DependentUpon>Form2.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="NewEstoq.resx">
+    <EmbeddedResource Include="View\NewEstoq.resx">
       <DependentUpon>NewEstoq.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -274,28 +280,6 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <None Include="Db_EstoquesDataSet.xsc">
-      <DependentUpon>Db_EstoquesDataSet.xsd</DependentUpon>
-    </None>
-    <None Include="Db_EstoquesDataSet.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>Db_EstoquesDataSet.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Db_EstoquesDataSet.xss">
-      <DependentUpon>Db_EstoquesDataSet.xsd</DependentUpon>
-    </None>
-    <None Include="Db_EstoquesDataSet1.xsc">
-      <DependentUpon>Db_EstoquesDataSet1.xsd</DependentUpon>
-    </None>
-    <None Include="Db_EstoquesDataSet1.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>Db_EstoquesDataSet1.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Db_EstoquesDataSet1.xss">
-      <DependentUpon>Db_EstoquesDataSet1.xsd</DependentUpon>
-    </None>
     <None Include="packages.config" />
     <None Include="Properties\DataSources\Form1.datasource" />
     <None Include="Properties\DataSources\Form2.datasource" />
@@ -324,12 +308,12 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Db_Estoques.mdf">
+    <Content Include="Control\Db_Estoques.mdf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Db_Estoques_log.ldf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    <Content Include="Control\Db_Estoques_log.ldf">
       <DependentUpon>Db_Estoques.mdf</DependentUpon>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
   <ItemGroup>

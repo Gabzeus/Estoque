@@ -112,6 +112,7 @@ namespace EstoqueV1
 
             if (DialogResult.Yes == MessageBox.Show("Confirmar alterações?", "", MessageBoxButtons.YesNo, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button2))
             {
+               
                 string updateProduto;
                 string verificaId = txtId.Text.ToString();
                 int result;
@@ -122,7 +123,11 @@ namespace EstoqueV1
                     {
                         int i = 0;
                         int erro = 0;
-                        if (txtQtd.Text != "" && txtValor.Text != "" && txtFornecedor.Text != "" && txtResponsavel.Text != "" && mtxtValidade.Text != "" && mtxtEntrada.Text != "")
+
+                        string textoDataEntrada = mtxtEntrada.Text;
+                        string textoDataValidade= mtxtValidade.Text;
+                       
+                        if (txtQtd.Text != "" && txtValor.Text != "" && txtFornecedor.Text != "" && txtResponsavel.Text != "" && textoDataEntrada != "  /  /" && textoDataValidade != "  /  /")
                         {
                             DateTime dataEnt = Convert.ToDateTime(mtxtEntrada.Text);
                             DateTime dataVal = Convert.ToDateTime(mtxtValidade.Text);
@@ -199,11 +204,12 @@ namespace EstoqueV1
                                 }
                             }
 
-                            if (mtxtEntrada.Text != "" || mtxtEntrada.Text != "  /  /")
+                            if (textoDataEntrada != "  /  /" || mtxtEntrada.Text != "  /  /")
                             {
 
                                 DateTime dataEnt = Convert.ToDateTime(mtxtEntrada.Text);
                                 string dataFormat = dataEnt.Date.ToString("yyyy-MM-dd");
+
 
 
                                 updateProduto = "UPDATE produto SET dataEntrada = '" + dataFormat + "' WHERE IdProduto = " + txtId.Text + "";
@@ -227,7 +233,7 @@ namespace EstoqueV1
                                 }
                             }
 
-                            if (mtxtValidade.Text != "" || mtxtValidade.Text != "  /  /")
+                            if (textoDataValidade != "  /  /" || mtxtValidade.Text != "  /  /")
                             {
 
                                 DateTime dataEnt = Convert.ToDateTime(mtxtValidade.Text);
@@ -339,7 +345,7 @@ namespace EstoqueV1
                     }
                     catch (FormatException form)
                     {
-                        MessageBox.Show("O formato de algum dado inserido não foi aceito em seu campo. Tente novamente.\n" + form.ToString());                      
+                        MessageBox.Show("O formato de algum dado inserido não foi aceito em seu campo. Tente novamente.\n" + form.ToString());
                     }
 
 

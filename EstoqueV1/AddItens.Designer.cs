@@ -181,6 +181,7 @@ namespace EstoqueV1
             this.txtQtd.Name = "txtQtd";
             this.txtQtd.Size = new System.Drawing.Size(49, 20);
             this.txtQtd.TabIndex = 64;
+            this.txtQtd.TextChanged += new System.EventHandler(this.txtQtd_TextChanged_1);
             // 
             // txtNome
             // 

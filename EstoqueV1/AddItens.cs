@@ -124,7 +124,7 @@ namespace EstoqueV1
                         if (txtQtd.Text != "" && txtValor.Text != "" && txtFornecedor.Text != "" && txtResponsavel.Text != "" && mtxtValidade.Text != "" && mtxtEntrada.Text != "")
                         {
 
-                            updateProduto = "UPDATE produto SET quantidade =+ '" + Int32.Parse(txtQtd.Text) + "', valor = '" + Double.Parse(txtValor.Text) + "', dataEntrada = '" + mtxtEntrada.Text + "', dataValidade = '" + mtxtValidade.Text + "', fornecedor = '" + txtFornecedor.Text + "', responsavel = '" + txtResponsavel.Text + "' WHERE IdProduto = " + txtId.Text + "";
+                            updateProduto = "UPDATE produto SET quantidade = quantidade + '" + txtQtd.Text + "', valor = '" + Double.Parse(txtValor.Text) + "', dataEntrada = '" + mtxtEntrada.Text + "', dataValidade = '" + mtxtValidade.Text + "', fornecedor = '" + txtFornecedor.Text + "', responsavel = '" + txtResponsavel.Text + "' WHERE IdProduto = " + txtId.Text + "";
 
                             cmd = new MySqlCommand(updateProduto, conn);
                             cmd.CommandType = CommandType.Text;
@@ -148,7 +148,7 @@ namespace EstoqueV1
                         {
                             if (txtQtd.Text != "")
                             {
-                                updateProduto = "UPDATE produto SET quantidade =+ " + Int32.Parse(txtQtd.Text) + " WHERE IdProduto = " + txtId.Text + "";
+                                updateProduto = "UPDATE produto SET quantidade = quantidade + " + txtQtd.Text + " WHERE IdProduto = " + txtId.Text + "";
 
                                 cmd = new MySqlCommand(updateProduto, conn);
                                 cmd.CommandType = CommandType.Text;
@@ -302,6 +302,11 @@ namespace EstoqueV1
                     }
                 }
             }
+        }
+
+        private void txtQtd_TextChanged_1(object sender, EventArgs e)
+        {
+
         }
     }
 }

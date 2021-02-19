@@ -102,7 +102,7 @@ namespace EstoqueV1
                         if (txtQtdRemovida.Text != "" && txtValor2.Text != "" && txtFornecedor2.Text != "" && txtResponsavel2.Text != "")
                         {
 
-                            updateProduto = "UPDATE produto SET quantidade =- '" + Int32.Parse(txtQtdRemovida.Text) + "', valor = '" + Double.Parse(txtValor2.Text) + "', fornecedor = '" + txtFornecedor2.Text + "', responsavel = '" + txtResponsavel2.Text + "' WHERE IdProduto = " + txtId2.Text + "";
+                            updateProduto = "UPDATE produto SET quantidade = quantidade - '" + txtQtdRemovida.Text + "', valor = '" + Double.Parse(txtValor2.Text) + "', fornecedor = '" + txtFornecedor2.Text + "', responsavel = '" + txtResponsavel2.Text + "' WHERE IdProduto = " + txtId2.Text + "";
 
                             cmd = new MySqlCommand(updateProduto, conn);
                             cmd.CommandType = CommandType.Text;
@@ -126,9 +126,8 @@ namespace EstoqueV1
                         else
                         {                          
                             if (txtQtdRemovida.Text != "")
-                            {
-                                int tirarQtd = (Int32.Parse(txtQtdRemovida.Text)) * -1;
-                                updateProduto = "UPDATE produto SET quantidade =+ " + tirarQtd + " WHERE IdProduto = " + txtId2.Text + "";
+                            {                             
+                                updateProduto = "UPDATE produto SET quantidade = quantidade - " + txtQtdRemovida.Text + " WHERE IdProduto = " + txtId2.Text + "";
 
                                 cmd = new MySqlCommand(updateProduto, conn);
                                 cmd.CommandType = CommandType.Text;
@@ -228,6 +227,7 @@ namespace EstoqueV1
                         MessageBox.Show("Id do produto inserido não é um número. Tente novamente.");
                         throw;
                     }
+                  
                 }
             }
         }

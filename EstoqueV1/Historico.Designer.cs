@@ -48,6 +48,7 @@ namespace EstoqueV1
             this.dgvDados.Size = new System.Drawing.Size(392, 326);
             this.dgvDados.TabIndex = 0;
             this.dgvDados.TabStop = false;
+            this.dgvDados.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDados_CellContentClick);
             // 
             // btnPesquisar
             // 

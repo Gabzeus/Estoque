@@ -158,5 +158,26 @@ namespace EstoqueV1
         {
 
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            MySqlDataAdapter da;
+            BindingSource bsource = new BindingSource();
+            DataSet ds = null;
+            string carregaProdutos;
+
+
+            MySqlConnection conn = new MySqlConnection("server=localhost;port=3306;User id=root;database=pacstoque;password=");
+
+            carregaProdutos = "SELECT * FROM produto";
+            da = new MySqlDataAdapter(carregaProdutos, conn);
+            conn.Open();
+            ds = new DataSet();
+            MySqlCommandBuilder commandBuilder = new MySqlCommandBuilder(da);
+            da.Fill(ds, "Produtos");
+            bsource.DataSource = ds.Tables["Produtos"];
+            dataGridView1.DataSource = bsource;
+            conn.Close();
+        }
     }
 }

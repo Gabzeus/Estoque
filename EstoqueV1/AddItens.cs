@@ -121,10 +121,15 @@ namespace EstoqueV1
                     try
                     {
                         int i = 0;
+                        int erro = 0;
                         if (txtQtd.Text != "" && txtValor.Text != "" && txtFornecedor.Text != "" && txtResponsavel.Text != "" && mtxtValidade.Text != "" && mtxtEntrada.Text != "")
                         {
+                            DateTime dataEnt = Convert.ToDateTime(mtxtEntrada.Text);
+                            DateTime dataVal = Convert.ToDateTime(mtxtValidade.Text);
+                            string dataEntFormat = dataEnt.Date.ToString("yyyy-MM-dd");
+                            string dataValFormat = dataVal.Date.ToString("yyyy-MM-dd");
 
-                            updateProduto = "UPDATE produto SET quantidade = quantidade + '" + txtQtd.Text + "', valor = '" + Double.Parse(txtValor.Text) + "', dataEntrada = '" + mtxtEntrada.Text + "', dataValidade = '" + mtxtValidade.Text + "', fornecedor = '" + txtFornecedor.Text + "', responsavel = '" + txtResponsavel.Text + "' WHERE IdProduto = " + txtId.Text + "";
+                            updateProduto = "UPDATE produto SET quantidade = quantidade + " + txtQtd.Text + ", valor = '" + Double.Parse(txtValor.Text) + "', dataEntrada = '" + dataEntFormat + "', dataValidade = '" + dataValFormat + "', fornecedor = '" + txtFornecedor.Text + "', responsavel = '" + txtResponsavel.Text + "' WHERE IdProduto = " + txtId.Text + "";
 
                             cmd = new MySqlCommand(updateProduto, conn);
                             cmd.CommandType = CommandType.Text;
@@ -134,10 +139,12 @@ namespace EstoqueV1
                                 int j = cmd.ExecuteNonQuery();
                                 if (j > 0)
                                     MessageBox.Show("Entrada do produto registrada com sucesso!");
+                                i++;
                             }
                             catch (Exception ex)
                             {
                                 MessageBox.Show("Erro: " + ex.ToString());
+                                erro++;
                             }
                             finally
                             {
@@ -156,11 +163,12 @@ namespace EstoqueV1
                                 try
                                 {
                                     cmd.ExecuteNonQuery();
+                                    i++;
                                 }
                                 catch (Exception ex)
                                 {
                                     MessageBox.Show("Erro: " + ex.ToString());
-                                    i++;
+                                    erro++;
                                 }
                                 finally
                                 {
@@ -178,11 +186,12 @@ namespace EstoqueV1
                                 try
                                 {
                                     cmd.ExecuteNonQuery();
+                                    i++;
                                 }
                                 catch (Exception ex)
                                 {
                                     MessageBox.Show("Erro: " + ex.ToString());
-                                    i++;
+                                    erro++;
                                 }
                                 finally
                                 {
@@ -190,7 +199,7 @@ namespace EstoqueV1
                                 }
                             }
 
-                            if (mtxtEntrada.Text != "" && mtxtEntrada.Text != "  /  /")
+                            if (mtxtEntrada.Text != "" || mtxtEntrada.Text != "  /  /")
                             {
 
                                 DateTime dataEnt = Convert.ToDateTime(mtxtEntrada.Text);
@@ -205,11 +214,12 @@ namespace EstoqueV1
                                 try
                                 {
                                     cmd.ExecuteNonQuery();
+                                    i++;
                                 }
                                 catch (Exception ex)
                                 {
                                     MessageBox.Show("Erro: " + ex.ToString());
-                                    i++;
+                                    erro++;
                                 }
                                 finally
                                 {
@@ -217,7 +227,7 @@ namespace EstoqueV1
                                 }
                             }
 
-                            if (mtxtValidade.Text != "" && mtxtValidade.Text != "  /  /")
+                            if (mtxtValidade.Text != "" || mtxtValidade.Text != "  /  /")
                             {
 
                                 DateTime dataEnt = Convert.ToDateTime(mtxtValidade.Text);
@@ -231,11 +241,12 @@ namespace EstoqueV1
                                 try
                                 {
                                     cmd.ExecuteNonQuery();
+                                    i++;
                                 }
                                 catch (Exception ex)
                                 {
                                     MessageBox.Show("Erro: " + ex.ToString());
-                                    i++;
+                                    erro++;
                                 }
                                 finally
                                 {
@@ -253,11 +264,12 @@ namespace EstoqueV1
                                 try
                                 {
                                     cmd.ExecuteNonQuery();
+                                    i++;
                                 }
                                 catch (Exception ex)
                                 {
                                     MessageBox.Show("Erro: " + ex.ToString());
-                                    i++;
+                                    erro++;
                                 }
                                 finally
                                 {
@@ -275,6 +287,43 @@ namespace EstoqueV1
                                 try
                                 {
                                     cmd.ExecuteNonQuery();
+                                    i++;
+                                }
+                                catch (Exception ex)
+                                {
+                                    MessageBox.Show("Erro: " + ex.ToString());
+                                    erro++;
+                                }
+                                finally
+                                {
+                                    conn.Close();
+                                }
+                            }
+                            if (erro >= 1)
+                            {
+                                MessageBox.Show("Algumas ou nenhuma informação foi alterada, tente novamente.");
+                            }
+                            else
+                            {
+                                MessageBox.Show("Entrada do produto registrada com sucesso!");
+                                i++;
+                            }
+                        }
+                        if (i > 0)
+                        {
+                            if (DialogResult.Yes == MessageBox.Show("Registrar entrada do produto?", "", MessageBoxButtons.YesNo, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button2))
+                            {
+                                DateTime dataAtual = Convert.ToDateTime(DateTime.Now);
+                                string dataFormat = dataAtual.Date.ToString("yyyy-MM-dd hh:mm:ss");
+
+                                string insertHist = "INSERT INTO historico (tipoOperacao, produto, data, responsavel, qtdMovimentada) VALUES ('Entrada', '" + txtNome.Text + "', '" + dataFormat + "', '" + txtResponsavel.Text + "', '" + txtQtd.Text + "')";
+
+                                cmd = new MySqlCommand(insertHist, conn);
+                                cmd.CommandType = CommandType.Text;
+                                conn.Open();
+                                try
+                                {
+                                    cmd.ExecuteNonQuery();
                                 }
                                 catch (Exception ex)
                                 {
@@ -284,22 +333,16 @@ namespace EstoqueV1
                                 {
                                     conn.Close();
                                 }
-                            }
-                            if (i >= 1)
-                            {
-                                MessageBox.Show("Algumas ou nenhuma informação foi alterada, tente novamente.");
-                            }
-                            else
-                            {
-                                MessageBox.Show("Entrada do produto registrada com sucesso!");
+
                             }
                         }
                     }
                     catch (FormatException form)
                     {
-                        MessageBox.Show("O formato de algum dado inserido não foi aceito em seu campo. Tente novamente.\n" + form.ToString());
-                        throw;
+                        MessageBox.Show("O formato de algum dado inserido não foi aceito em seu campo. Tente novamente.\n" + form.ToString());                      
                     }
+
+
                 }
             }
         }

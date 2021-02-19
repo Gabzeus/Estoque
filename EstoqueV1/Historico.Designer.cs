@@ -108,11 +108,11 @@ namespace EstoqueV1
             // 
             this.lblTitulo.AutoSize = true;
             this.lblTitulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Underline);
-            this.lblTitulo.Location = new System.Drawing.Point(186, 32);
+            this.lblTitulo.Location = new System.Drawing.Point(112, 29);
             this.lblTitulo.Name = "lblTitulo";
-            this.lblTitulo.Size = new System.Drawing.Size(100, 26);
+            this.lblTitulo.Size = new System.Drawing.Size(234, 26);
             this.lblTitulo.TabIndex = 7;
-            this.lblTitulo.Text = "Cadastro";
+            this.lblTitulo.Text = "Histórico de operações";
             // 
             // Historico
             // 

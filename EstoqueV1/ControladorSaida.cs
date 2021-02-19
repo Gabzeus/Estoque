@@ -16,8 +16,6 @@ namespace EstoqueV1
         public ControladorSaida()
         {
             InitializeComponent();
-            mtxtEntrada.Mask = "00/00/0000";
-            mtxtValidade.Mask = "00/00/0000";
         }
 
         MySqlConnection conn = new MySqlConnection("server=localhost;port=3306;User id=root;database=pacstoque;password=");
@@ -101,10 +99,10 @@ namespace EstoqueV1
                     try
                     {
                         int i = 0;
-                        if (txtQtdRemovida.Text != "" && txtValor2.Text != "" && txtFornecedor2.Text != "" && txtResponsavel2.Text != "" && mtxtValidade.Text != "" && mtxtEntrada.Text != "")
+                        if (txtQtdRemovida.Text != "" && txtValor2.Text != "" && txtFornecedor2.Text != "" && txtResponsavel2.Text != "")
                         {
 
-                            updateProduto = "UPDATE produto SET quantidade =- '" + Int32.Parse(txtQtdRemovida.Text) + "', valor = '" + Double.Parse(txtValor2.Text) + "', dataEntrada = '" + mtxtEntrada.Text + "', dataValidade = '" + mtxtValidade.Text + "', fornecedor = '" + txtFornecedor2.Text + "', responsavel = '" + txtResponsavel2.Text + "' WHERE IdProduto = " + txtId2.Text + "";
+                            updateProduto = "UPDATE produto SET quantidade =- '" + Int32.Parse(txtQtdRemovida.Text) + "', valor = '" + Double.Parse(txtValor2.Text) + "', fornecedor = '" + txtFornecedor2.Text + "', responsavel = '" + txtResponsavel2.Text + "' WHERE IdProduto = " + txtId2.Text + "";
 
                             cmd = new MySqlCommand(updateProduto, conn);
                             cmd.CommandType = CommandType.Text;
@@ -170,53 +168,7 @@ namespace EstoqueV1
                                 {
                                     conn.Close();
                                 }
-                            }
-
-                            if (mtxtEntrada.Text != "" || mtxtEntrada.Text != "00/00/0000")
-                            {
-
-
-                                updateProduto = "UPDATE produto SET dataEntrada = '" + mtxtEntrada.Text + "' WHERE IdProduto = " + txtId2.Text + "";
-
-                                cmd = new MySqlCommand(updateProduto, conn);
-                                cmd.CommandType = CommandType.Text;
-                                conn.Open();
-                                try
-                                {
-                                    cmd.ExecuteNonQuery();
-                                }
-                                catch (Exception ex)
-                                {
-                                    MessageBox.Show("Erro: " + ex.ToString());
-                                    i++;                                    
-                                }
-                                finally
-                                {
-                                    conn.Close();
-                                }
-                            }
-
-                            if (mtxtValidade.Text != "" || mtxtValidade.Text != "00/00/0000")
-                            {
-                                updateProduto = "UPDATE produto SET dataValidade = '" + mtxtValidade.Text + "' WHERE IdProduto = " + txtId2.Text + "";
-
-                                cmd = new MySqlCommand(updateProduto, conn);
-                                cmd.CommandType = CommandType.Text;
-                                conn.Open();
-                                try
-                                {
-                                    cmd.ExecuteNonQuery();
-                                }
-                                catch (Exception ex)
-                                {
-                                    MessageBox.Show("Erro: " + ex.ToString());
-                                    i++;
-                                }
-                                finally
-                                {
-                                    conn.Close();
-                                }
-                            }
+                            }                          
 
                             if (txtResponsavel2.Text != "")
                             {

@@ -54,16 +54,20 @@ namespace EstoqueV1
             // mtxtValidade
             // 
             this.mtxtValidade.Location = new System.Drawing.Point(529, 120);
+            this.mtxtValidade.Mask = "00/00/0000";
             this.mtxtValidade.Name = "mtxtValidade";
             this.mtxtValidade.Size = new System.Drawing.Size(100, 20);
             this.mtxtValidade.TabIndex = 79;
+            this.mtxtValidade.ValidatingType = typeof(System.DateTime);
             // 
             // mtxtEntrada
             // 
             this.mtxtEntrada.Location = new System.Drawing.Point(529, 76);
+            this.mtxtEntrada.Mask = "00/00/0000";
             this.mtxtEntrada.Name = "mtxtEntrada";
             this.mtxtEntrada.Size = new System.Drawing.Size(100, 20);
             this.mtxtEntrada.TabIndex = 78;
+            this.mtxtEntrada.ValidatingType = typeof(System.DateTime);
             // 
             // txtResponsavel
             // 
@@ -116,6 +120,9 @@ namespace EstoqueV1
             // 
             // DtgvEntradaProdutos
             // 
+            this.DtgvEntradaProdutos.AllowUserToAddRows = false;
+            this.DtgvEntradaProdutos.AllowUserToDeleteRows = false;
+            this.DtgvEntradaProdutos.AllowUserToOrderColumns = true;
             this.DtgvEntradaProdutos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DtgvEntradaProdutos.Location = new System.Drawing.Point(12, 12);
             this.DtgvEntradaProdutos.Name = "DtgvEntradaProdutos";
@@ -123,6 +130,7 @@ namespace EstoqueV1
             this.DtgvEntradaProdutos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.DtgvEntradaProdutos.Size = new System.Drawing.Size(366, 258);
             this.DtgvEntradaProdutos.TabIndex = 71;
+            this.DtgvEntradaProdutos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DtgvEntradaProdutos_CellContentClick);
             // 
             // label2
             // 
@@ -210,6 +218,7 @@ namespace EstoqueV1
             this.btnSalvar.TabIndex = 61;
             this.btnSalvar.Text = "&Salvar";
             this.btnSalvar.UseVisualStyleBackColor = true;
+            this.btnSalvar.Click += new System.EventHandler(this.btnSalvar_Click_1);
             // 
             // AddItens
             // 

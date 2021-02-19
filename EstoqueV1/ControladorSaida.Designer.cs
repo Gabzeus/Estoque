@@ -38,16 +38,12 @@ namespace EstoqueV1
             this.txtFornecedor2 = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.DtgvEntradaProdutos = new System.Windows.Forms.DataGridView();
-            this.label2 = new System.Windows.Forms.Label();
             this.lblValor = new System.Windows.Forms.Label();
             this.txtValor2 = new System.Windows.Forms.TextBox();
-            this.lblEntrada = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.txtQtdRemovida = new System.Windows.Forms.TextBox();
             this.txtNome2 = new System.Windows.Forms.TextBox();
             this.lblNome = new System.Windows.Forms.Label();
-            this.mtxtEntrada = new System.Windows.Forms.MaskedTextBox();
-            this.mtxtValidade = new System.Windows.Forms.MaskedTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.DtgvEntradaProdutos)).BeginInit();
             this.SuspendLayout();
             // 
@@ -74,7 +70,7 @@ namespace EstoqueV1
             // 
             // txtResponsavel2
             // 
-            this.txtResponsavel2.Location = new System.Drawing.Point(384, 213);
+            this.txtResponsavel2.Location = new System.Drawing.Point(529, 132);
             this.txtResponsavel2.Name = "txtResponsavel2";
             this.txtResponsavel2.Size = new System.Drawing.Size(96, 20);
             this.txtResponsavel2.TabIndex = 57;
@@ -83,7 +79,7 @@ namespace EstoqueV1
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(384, 197);
+            this.label5.Location = new System.Drawing.Point(529, 116);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(69, 13);
             this.label5.TabIndex = 58;
@@ -109,7 +105,7 @@ namespace EstoqueV1
             // 
             // txtFornecedor2
             // 
-            this.txtFornecedor2.Location = new System.Drawing.Point(529, 213);
+            this.txtFornecedor2.Location = new System.Drawing.Point(529, 88);
             this.txtFornecedor2.Name = "txtFornecedor2";
             this.txtFornecedor2.Size = new System.Drawing.Size(96, 20);
             this.txtFornecedor2.TabIndex = 53;
@@ -118,7 +114,7 @@ namespace EstoqueV1
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(526, 197);
+            this.label3.Location = new System.Drawing.Point(526, 72);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(61, 13);
             this.label3.TabIndex = 54;
@@ -134,15 +130,6 @@ namespace EstoqueV1
             this.DtgvEntradaProdutos.Size = new System.Drawing.Size(366, 258);
             this.DtgvEntradaProdutos.TabIndex = 52;
             this.DtgvEntradaProdutos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DtgvEntradaProdutos_CellContentClick);
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(526, 116);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(73, 13);
-            this.label2.TabIndex = 51;
-            this.label2.Text = "Data validade";
             // 
             // lblValor
             // 
@@ -160,15 +147,6 @@ namespace EstoqueV1
             this.txtValor2.Size = new System.Drawing.Size(49, 20);
             this.txtValor2.TabIndex = 46;
             this.txtValor2.TextChanged += new System.EventHandler(this.txtValor2_TextChanged);
-            // 
-            // lblEntrada
-            // 
-            this.lblEntrada.AutoSize = true;
-            this.lblEntrada.Location = new System.Drawing.Point(526, 72);
-            this.lblEntrada.Name = "lblEntrada";
-            this.lblEntrada.Size = new System.Drawing.Size(69, 13);
-            this.lblEntrada.TabIndex = 49;
-            this.lblEntrada.Text = "Data entrada";
             // 
             // label1
             // 
@@ -205,27 +183,11 @@ namespace EstoqueV1
             this.lblNome.TabIndex = 47;
             this.lblNome.Text = "Nome do produto";
             // 
-            // mtxtEntrada
-            // 
-            this.mtxtEntrada.Location = new System.Drawing.Point(529, 88);
-            this.mtxtEntrada.Name = "mtxtEntrada";
-            this.mtxtEntrada.Size = new System.Drawing.Size(100, 20);
-            this.mtxtEntrada.TabIndex = 59;
-            // 
-            // mtxtValidade
-            // 
-            this.mtxtValidade.Location = new System.Drawing.Point(529, 132);
-            this.mtxtValidade.Name = "mtxtValidade";
-            this.mtxtValidade.Size = new System.Drawing.Size(100, 20);
-            this.mtxtValidade.TabIndex = 60;
-            // 
             // ControladorSaida
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(642, 352);
-            this.Controls.Add(this.mtxtValidade);
-            this.Controls.Add(this.mtxtEntrada);
             this.Controls.Add(this.txtResponsavel2);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.txtId2);
@@ -233,10 +195,8 @@ namespace EstoqueV1
             this.Controls.Add(this.txtFornecedor2);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.DtgvEntradaProdutos);
-            this.Controls.Add(this.label2);
             this.Controls.Add(this.lblValor);
             this.Controls.Add(this.txtValor2);
-            this.Controls.Add(this.lblEntrada);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtQtdRemovida);
             this.Controls.Add(this.txtNome2);
@@ -263,16 +223,12 @@ namespace EstoqueV1
         private System.Windows.Forms.TextBox txtFornecedor2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.DataGridView DtgvEntradaProdutos;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label lblValor;
         private System.Windows.Forms.TextBox txtValor2;
-        private System.Windows.Forms.Label lblEntrada;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtQtdRemovida;
         private System.Windows.Forms.TextBox txtNome2;
         private System.Windows.Forms.Label lblNome;
-        private System.Windows.Forms.MaskedTextBox mtxtEntrada;
-        private System.Windows.Forms.MaskedTextBox mtxtValidade;
 
     }
 }

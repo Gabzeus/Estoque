@@ -15,14 +15,98 @@ namespace EstoqueV1
     {
         public AddItens()
         {
-            InitializeComponent();
-            mtxtEntrada.Mask = "00/00/0000";
-            mtxtValidade.Mask = "00/00/0000";
+            InitializeComponent();         
         }
 
         MySqlConnection conn = new MySqlConnection("server=localhost;port=3306;User id=root;database=pacstoque;password=");
 
+        private void AddItens_Load(object sender, EventArgs e)
+        {
+            
+        }
+
         private void btnSalvar_Click(object sender, EventArgs e)
+        {
+            
+            
+        }
+
+        private void lblValor_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtNome_TextChanged(object sender, EventArgs e)
+        {
+
+        }     
+
+        private void label6_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label7_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtQtd_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtResponsavel_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtEntrada_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
+        {
+           
+        }
+
+      
+
+        private void txtDataValidade_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
+        {
+
+        }
+
+        private void AddItens_Load_1(object sender, EventArgs e)
+        {
+            MySqlDataAdapter da;
+            BindingSource bsource = new BindingSource();
+            DataSet ds = null;
+            string carregaProdutos;
+
+
+            carregaProdutos = "SELECT IdProduto, categoria, nome, quantidade, valor, dataEntrada, dataValidade, responsavel, fornecedor, estoque FROM produto";
+            da = new MySqlDataAdapter(carregaProdutos, conn);
+            conn.Open();
+            ds = new DataSet();
+            MySqlCommandBuilder commandBuilder = new MySqlCommandBuilder(da);
+            da.Fill(ds, "Produtos");
+            bsource.DataSource = ds.Tables["Produtos"];
+            DtgvEntradaProdutos.DataSource = bsource;
+            conn.Close();
+        }
+
+        private void DtgvEntradaProdutos_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            this.txtNome.Text = DtgvEntradaProdutos.SelectedCells[2].Value.ToString();
+            this.txtId.Text = DtgvEntradaProdutos.SelectedCells[0].Value.ToString();
+            this.txtValor.Text = DtgvEntradaProdutos.SelectedCells[4].Value.ToString();
+            this.txtResponsavel.Text = DtgvEntradaProdutos.SelectedCells[7].Value.ToString();
+            this.txtFornecedor.Text = DtgvEntradaProdutos.SelectedCells[8].Value.ToString();
+        }
+
+        private void btnSalvar_Click_1(object sender, EventArgs e)
         {
             MySqlCommand cmd;
 
@@ -93,7 +177,7 @@ namespace EstoqueV1
                                 conn.Open();
                                 try
                                 {
-                                    cmd.ExecuteNonQuery();                                    
+                                    cmd.ExecuteNonQuery();
                                 }
                                 catch (Exception ex)
                                 {
@@ -106,9 +190,14 @@ namespace EstoqueV1
                                 }
                             }
 
-                            if (mtxtEntrada.Text != "")
+                            if (mtxtEntrada.Text != "" && mtxtEntrada.Text != "  /  /")
                             {
-                                updateProduto = "UPDATE produto SET dataEntrada = '" + mtxtEntrada.Text + "' WHERE IdProduto = " + txtId.Text + "";
+
+                                DateTime dataEnt = Convert.ToDateTime(mtxtEntrada.Text);
+                                string dataFormat = dataEnt.Date.ToString("yyyy-MM-dd");
+
+
+                                updateProduto = "UPDATE produto SET dataEntrada = '" + dataFormat + "' WHERE IdProduto = " + txtId.Text + "";
 
                                 cmd = new MySqlCommand(updateProduto, conn);
                                 cmd.CommandType = CommandType.Text;
@@ -128,9 +217,13 @@ namespace EstoqueV1
                                 }
                             }
 
-                            if (mtxtValidade.Text != "")
+                            if (mtxtValidade.Text != "" && mtxtValidade.Text != "  /  /")
                             {
-                                updateProduto = "UPDATE produto SET dataValidade = '" + mtxtValidade.Text + "' WHERE IdProduto = " + txtId.Text + "";
+
+                                DateTime dataEnt = Convert.ToDateTime(mtxtValidade.Text);
+                                string dataFormat = dataEnt.Date.ToString("yyyy-MM-dd");
+
+                                updateProduto = "UPDATE produto SET dataValidade = '" + dataFormat + "' WHERE IdProduto = " + txtId.Text + "";
 
                                 cmd = new MySqlCommand(updateProduto, conn);
                                 cmd.CommandType = CommandType.Text;
@@ -202,85 +295,13 @@ namespace EstoqueV1
                             }
                         }
                     }
-                    catch (FormatException)
+                    catch (FormatException form)
                     {
-                        MessageBox.Show("Id do produto inserido não é um número. Tente novamente.");
+                        MessageBox.Show("O formato de algum dado inserido não foi aceito em seu campo. Tente novamente.\n" + form.ToString());
                         throw;
                     }
                 }
             }
-            
-        }
-
-        private void lblValor_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtNome_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void AddItens_Load(object sender, EventArgs e)
-        {
-            MySqlDataAdapter da;
-            BindingSource bsource = new BindingSource();
-            DataSet ds = null;
-            string carregaProdutos;
-
-
-            carregaProdutos = "SELECT IdProduto, categoria, nome, quantidade, valor, dataEntrada, dataValidade, responsavel, fornecedor, estoque FROM produto";
-            da = new MySqlDataAdapter(carregaProdutos, conn);
-            conn.Open();
-            ds = new DataSet();
-            MySqlCommandBuilder commandBuilder = new MySqlCommandBuilder(da);
-            da.Fill(ds, "Produtos");
-            bsource.DataSource = ds.Tables["Produtos"];
-            DtgvEntradaProdutos.DataSource = bsource;
-            conn.Close();
-        }
-
-        private void label6_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label7_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtQtd_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtResponsavel_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtEntrada_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
-        {
-           
-        }
-
-      
-
-        private void txtDataValidade_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
-        {
-
-        }
-
-        private void AddItens_Load_1(object sender, EventArgs e)
-        {
-
         }
     }
 }

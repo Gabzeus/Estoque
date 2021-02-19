@@ -56,6 +56,7 @@ namespace EstoqueV1
 
         private void txtQtdRemovida_TextChanged(object sender, EventArgs e)
         {
+           
 
         }
 
@@ -87,182 +88,232 @@ namespace EstoqueV1
         private void btnSalvar_Click(object sender, EventArgs e)
         {
             MySqlCommand cmd;
+            string id = txtId2.Text.ToString();
 
-            if (DialogResult.Yes == MessageBox.Show("Confirmar alterações?", "", MessageBoxButtons.YesNo, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button2))
+            if (String.IsNullOrEmpty(id) == false)
             {
-                string updateProduto;
-                string verificaId = txtId2.Text.ToString();
-                int result;
-                bool idProd = Int32.TryParse(verificaId, out result);
-                if (idProd)
+
+
+
+                if (DialogResult.Yes == MessageBox.Show("Confirmar alterações?", "", MessageBoxButtons.YesNo, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button2))
                 {
-                    try
+                    string updateProduto;
+                    string verificaId = txtId2.Text.ToString();
+                    int result;
+                    bool idProd = Int32.TryParse(verificaId, out result);
+                    if (idProd)
                     {
-                        int i = 0;
-                        int erro = 0;
-                        if (txtQtdRemovida.Text != "" && txtValor2.Text != "" && txtFornecedor2.Text != "" && txtResponsavel2.Text != "")
+                        try
                         {
-
-                            updateProduto = "UPDATE produto SET quantidade = quantidade - '" + txtQtdRemovida.Text + "', valor = '" + txtValor2.Text + "', fornecedor = '" + txtFornecedor2.Text + "', responsavel = '" + txtResponsavel2.Text + "' WHERE IdProduto = " + txtId2.Text + "";
-
-                            cmd = new MySqlCommand(updateProduto, conn);
-                            cmd.CommandType = CommandType.Text;
-                            conn.Open();
-                            try
+                            int i = 0;
+                            int erro = 0;
+                            if (txtQtdRemovida.Text != "" && txtValor2.Text != "" && txtFornecedor2.Text != "" && txtResponsavel2.Text != "")
                             {
-                                int j = cmd.ExecuteNonQuery();
-                                if (j > 0)
-                                    MessageBox.Show("Saída do produto registrada com sucesso!");
+
+                                updateProduto = "UPDATE produto SET quantidade = quantidade - '" + txtQtdRemovida.Text + "', valor = '" + txtValor2.Text + "', fornecedor = '" + txtFornecedor2.Text + "', responsavel = '" + txtResponsavel2.Text + "' WHERE IdProduto = " + txtId2.Text + "";
+
+                                cmd = new MySqlCommand(updateProduto, conn);
+                                cmd.CommandType = CommandType.Text;
+                                conn.Open();
+                                try
+                                {
+                                    int j = cmd.ExecuteNonQuery();
+                                    if (j > 0)
+                                        MessageBox.Show("Saída do produto registrada com sucesso!");
+                                    i++;
+                                }
+                                catch (Exception ex)
+                                {
+                                    MessageBox.Show("Erro: " + ex.ToString());
+                                    erro++;
+                                }
+                                finally
+                                {
+                                    conn.Close();
+                                }
+                            }
+                            else
+                            {
+                                if (txtQtdRemovida.Text != "")
+                                {
+                                    updateProduto = "UPDATE produto SET quantidade = quantidade - " + txtQtdRemovida.Text + " WHERE IdProduto = " + txtId2.Text + "";
+
+                                    cmd = new MySqlCommand(updateProduto, conn);
+                                    cmd.CommandType = CommandType.Text;
+                                    conn.Open();
+                                    try
+                                    {
+                                        cmd.ExecuteNonQuery();
+                                        i++;
+                                    }
+                                    catch (Exception ex)
+                                    {
+                                        MessageBox.Show("Erro: " + ex.ToString());
+                                        erro++;
+                                    }
+                                    finally
+                                    {
+                                        conn.Close();
+                                    }
+                                }
+
+                                if (txtValor2.Text != "")
+                                {
+                                    updateProduto = "UPDATE produto SET valor = '" + txtValor2.Text + "' WHERE IdProduto = " + txtId2.Text + "";
+
+                                    cmd = new MySqlCommand(updateProduto, conn);
+                                    cmd.CommandType = CommandType.Text;
+                                    conn.Open();
+                                    try
+                                    {
+                                        cmd.ExecuteNonQuery();
+                                        i++;
+                                    }
+                                    catch (Exception ex)
+                                    {
+                                        MessageBox.Show("Erro: " + ex.ToString());
+                                        erro++;
+                                    }
+                                    finally
+                                    {
+                                        conn.Close();
+                                    }
+                                }
+
+                                if (txtResponsavel2.Text != "")
+                                {
+                                    updateProduto = "UPDATE produto SET responsavel = '" + txtResponsavel2.Text + "' WHERE IdProduto = " + txtId2.Text + "";
+
+                                    cmd = new MySqlCommand(updateProduto, conn);
+                                    cmd.CommandType = CommandType.Text;
+                                    conn.Open();
+                                    try
+                                    {
+                                        cmd.ExecuteNonQuery();
+                                        i++;
+                                    }
+                                    catch (Exception ex)
+                                    {
+                                        MessageBox.Show("Erro: " + ex.ToString());
+                                        erro++;
+                                    }
+                                    finally
+                                    {
+                                        conn.Close();
+                                    }
+                                }
+
+                                if (txtFornecedor2.Text != "")
+                                {
+                                    updateProduto = "UPDATE produto SET fornecedor = '" + txtFornecedor2.Text + "' WHERE IdProduto = " + txtId2.Text + "";
+
+                                    cmd = new MySqlCommand(updateProduto, conn);
+                                    cmd.CommandType = CommandType.Text;
+                                    conn.Open();
+                                    try
+                                    {
+                                        cmd.ExecuteNonQuery();
+                                        i++;
+                                    }
+                                    catch (Exception ex)
+                                    {
+                                        MessageBox.Show("Erro: " + ex.ToString());
+                                        erro++;
+                                    }
+                                    finally
+                                    {
+                                        conn.Close();
+                                    }
+                                }
+                            }
+                            if (erro >= 1)
+                            {
+                                MessageBox.Show("Algumas ou nenhuma informação foi alterada, tente novamente.");
+                            }
+                            else
+                            {
+                                MessageBox.Show("Saída do produto registrada com sucesso!");
                                 i++;
                             }
-                            catch (Exception ex)
+                            if (i > 0)
                             {
-                                MessageBox.Show("Erro: " + ex.ToString());
-                                erro++;
+                                if (DialogResult.Yes == MessageBox.Show("Registrar saída do produto?", "", MessageBoxButtons.YesNo, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button2))
+                                {
+                                    DateTime dataAtual = Convert.ToDateTime(DateTime.Now);
+                                    string dataFormat = dataAtual.Date.ToString("yyyy-MM-dd hh:mm:ss");
+
+                                    string insertHist = "INSERT INTO historico (tipoOperacao, produto, data, responsavel, qtdMovimentada) VALUES ('Saída', '" + txtNome2.Text + "', '" + dataFormat + "', '" + txtResponsavel2.Text + "', '" + txtQtdRemovida.Text + "')";
+
+                                    cmd = new MySqlCommand(insertHist, conn);
+                                    cmd.CommandType = CommandType.Text;
+                                    conn.Open();
+                                    try
+                                    {
+                                        cmd.ExecuteNonQuery();
+                                    }
+                                    catch (Exception ex)
+                                    {
+                                        MessageBox.Show("Erro: " + ex.ToString());
+                                    }
+                                    finally
+                                    {
+                                        conn.Close();
+                                    }
+
+                                }
                             }
-                            finally
+                            if (i > 0)
                             {
+                                string minima;
+
+                                minima = "SELECT quantidade, qtdMinimo FROM produto";
+
+                                List<NotificaQtd> minimo = new List<NotificaQtd>();
+                                cmd = new MySqlCommand(minima, conn);
+
+                                conn.Open();
+
+                                MySqlDataReader dr;
+                                dr = cmd.ExecuteReader();
+
+                                while (dr.Read())
+                                {
+                                    if (dr["quantidade"] != DBNull.Value || dr["qtdMinimo"] != DBNull.Value)
+                                    {
+                                        int qtdAtual = Convert.ToInt32(dr["quantidade"]);
+                                        int qtdMinima = Convert.ToInt32(dr["qtdMinimo"]);
+                                        NotificaQtd verificaQtd = new NotificaQtd(qtdAtual, qtdMinima);
+
+                                        minimo.Add(verificaQtd);
+                                    }
+                                }
+
+                                dr.Close();
                                 conn.Close();
+                                
+
+                                foreach (var item in minimo)
+                                {
+                                    if (item.Quantidade <= item.QtdMinimo)
+                                    {
+                                        MessageBox.Show("Um ou mais produtos atingiram a quantidade mínima estabelecida");
+                                    }
+
+                                }
                             }
                         }
-                        else
-                        {                          
-                            if (txtQtdRemovida.Text != "")
-                            {                             
-                                updateProduto = "UPDATE produto SET quantidade = quantidade - " + txtQtdRemovida.Text + " WHERE IdProduto = " + txtId2.Text + "";
-
-                                cmd = new MySqlCommand(updateProduto, conn);
-                                cmd.CommandType = CommandType.Text;
-                                conn.Open();
-                                try
-                                {
-                                    cmd.ExecuteNonQuery();
-                                    i++;
-                                }
-                                catch (Exception ex)
-                                {
-                                    MessageBox.Show("Erro: " + ex.ToString());
-                                    erro++;
-                                }
-                                finally
-                                {
-                                    conn.Close();
-                                }
-                            }
-
-                            if (txtValor2.Text != "")
-                            {
-                                updateProduto = "UPDATE produto SET valor = '" + txtValor2.Text + "' WHERE IdProduto = " + txtId2.Text + "";
-
-                                cmd = new MySqlCommand(updateProduto, conn);
-                                cmd.CommandType = CommandType.Text;
-                                conn.Open();
-                                try
-                                {
-                                    cmd.ExecuteNonQuery();
-                                    i++;
-                                }
-                                catch (Exception ex)
-                                {
-                                    MessageBox.Show("Erro: " + ex.ToString());
-                                    erro++;
-                                }
-                                finally
-                                {
-                                    conn.Close();
-                                }
-                            }                          
-
-                            if (txtResponsavel2.Text != "")
-                            {
-                                updateProduto = "UPDATE produto SET responsavel = '" + txtResponsavel2.Text + "' WHERE IdProduto = " + txtId2.Text + "";
-
-                                cmd = new MySqlCommand(updateProduto, conn);
-                                cmd.CommandType = CommandType.Text;
-                                conn.Open();
-                                try
-                                {
-                                    cmd.ExecuteNonQuery();
-                                    i++;
-                                }
-                                catch (Exception ex)
-                                {
-                                    MessageBox.Show("Erro: " + ex.ToString());
-                                    erro++;
-                                }
-                                finally
-                                {
-                                    conn.Close();
-                                }
-                            }
-
-                            if (txtFornecedor2.Text != "")
-                            {
-                                updateProduto = "UPDATE produto SET fornecedor = '" + txtFornecedor2.Text + "' WHERE IdProduto = " + txtId2.Text + "";
-
-                                cmd = new MySqlCommand(updateProduto, conn);
-                                cmd.CommandType = CommandType.Text;
-                                conn.Open();
-                                try
-                                {
-                                    cmd.ExecuteNonQuery();
-                                    i++;
-                                }
-                                catch (Exception ex)
-                                {
-                                    MessageBox.Show("Erro: " + ex.ToString());
-                                    erro++;
-                                }
-                                finally
-                                {
-                                    conn.Close();
-                                }
-                            }                          
-                        }
-                        if (erro >= 1)
+                        catch (FormatException)
                         {
-                            MessageBox.Show("Algumas ou nenhuma informação foi alterada, tente novamente.");
+                            MessageBox.Show("Id do produto inserido não é um número. Tente novamente.");
+                            throw;
                         }
-                        else
-                        {
-                            MessageBox.Show("Saída do produto registrada com sucesso!");
-                            i++;
-                        }
-                        if (i > 0)
-                        {
-                            if (DialogResult.Yes == MessageBox.Show("Registrar saída do produto?", "", MessageBoxButtons.YesNo, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button2))
-                            {
-                                DateTime dataAtual = Convert.ToDateTime(DateTime.Now);
-                                string dataFormat = dataAtual.Date.ToString("yyyy-MM-dd hh:mm:ss");
 
-                                string insertHist = "INSERT INTO historico (tipoOperacao, produto, data, responsavel, qtdMovimentada) VALUES ('Saída', '" + txtNome2.Text + "', '" + dataFormat + "', '" + txtResponsavel2.Text + "', '" + txtQtdRemovida.Text + "')";
-
-                                cmd = new MySqlCommand(insertHist, conn);
-                                cmd.CommandType = CommandType.Text;
-                                conn.Open();
-                                try
-                                {
-                                    cmd.ExecuteNonQuery();
-                                }
-                                catch (Exception ex)
-                                {
-                                    MessageBox.Show("Erro: " + ex.ToString());
-                                }
-                                finally
-                                {
-                                    conn.Close();
-                                }
-
-                            }
-                        }
                     }
-                    catch (FormatException)
-                    {
-                        MessageBox.Show("Id do produto inserido não é um número. Tente novamente.");
-                        throw;
-                    }
-                  
                 }
+            }
+            else if(String.IsNullOrEmpty(id))
+            {
+                MessageBox.Show("Nenhum Id do produto foi especificado. Preencha a caixa de texto correspondente");
             }
         }
 

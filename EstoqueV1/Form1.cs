@@ -38,6 +38,78 @@ namespace EstoqueV1
                 Form2 ViewCad = new Form2();
                 ViewCad.Closed += (s, args) => this.Close();
                 ViewCad.Show();
+
+                string vencimento;
+
+                vencimento = "SELECT dataValidade FROM produto";
+
+
+                List<DateTime> datasValidade = new List<DateTime>();
+                cmd = new MySqlCommand(vencimento, conn);
+
+                conn.Open();
+
+                MySqlDataReader dr;
+                dr = cmd.ExecuteReader();
+                
+                while(dr.Read())
+                {
+                    if (dr["dataValidade"] != DBNull.Value)
+                    {
+                        datasValidade.Add(Convert.ToDateTime(dr["dataValidade"]).Date);
+                    }
+                }
+
+                dr.Close();
+                conn.Close();
+
+                // select dataValidade from produtos
+
+
+
+
+
+                // dr(read)
+                // { datasValidade.Add(["dataValidade"])
+
+                DateTime dataHoje = DateTime.Today;
+
+                foreach (var item in datasValidade)
+                {
+
+                    DateTime dataValidadeSubtraida = item.AddDays(-7);
+                    if (dataHoje >= dataValidadeSubtraida)
+                    {
+                        /// Notificação
+                        const string message = "Existem produtos com o vencimento próximo. Gostaria de visualizá-los?";
+
+                        const string caption = "PacEstoque - Produtos ";
+                        var result = MessageBox.Show(message, caption,
+                                                     MessageBoxButtons.YesNo,
+                                                     MessageBoxIcon.Question);
+
+
+                        if (result == System.Windows.Forms.DialogResult.Yes)
+                        {
+                            this.Hide();
+                            Form f3 = new ControladorSaida();
+                            f3.Show();
+
+
+
+                        }
+                        else
+                        {
+
+                        }
+
+
+                    }
+
+                    break;
+                }
+
+                                
             }
             else
             {
@@ -94,6 +166,11 @@ namespace EstoqueV1
         public static string LoginEmUso()
         {
             return loginEmUso;
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -282,7 +282,11 @@ namespace EstoqueV1
         private void textBox1_TextChanged_1(object sender, EventArgs e)
         {
 
-        }        
-      
+        }
+
+        private void txtqtdMin_TextChanged(object sender, EventArgs e)
+        {
+           
+        }
     }
 }

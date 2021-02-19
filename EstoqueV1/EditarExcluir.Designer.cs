@@ -205,6 +205,7 @@ namespace EstoqueV1
             this.txtqtdMin.Name = "txtqtdMin";
             this.txtqtdMin.Size = new System.Drawing.Size(28, 20);
             this.txtqtdMin.TabIndex = 2;
+            this.txtqtdMin.TextChanged += new System.EventHandler(this.txtqtdMin_TextChanged);
             // 
             // txtQtdMax
             // 

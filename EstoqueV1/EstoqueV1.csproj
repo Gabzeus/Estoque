@@ -175,6 +175,7 @@
     <Compile Include="Historico.Designer.cs">
       <DependentUpon>Historico.cs</DependentUpon>
     </Compile>
+    <Compile Include="NotificaQtd.cs" />
     <Compile Include="Notificações.cs">
       <SubType>Form</SubType>
     </Compile>

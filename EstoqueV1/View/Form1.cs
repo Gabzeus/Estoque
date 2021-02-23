@@ -172,5 +172,11 @@ namespace EstoqueV1
         {
 
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            AddUser addconta2 = new AddUser();
+            addconta2.ShowDialog();
+        }
     }
 }

@@ -19,7 +19,6 @@ namespace EstoqueV1
         DateTime DataValidade { get; set; }
         double Valor { get; set; }
         int QtdMinina { get; set; }
-        int QtdMinina { get; set; }
         string Estoque { get; set; }
     }
 }

@@ -24,8 +24,8 @@ namespace EstoqueV1
 
         private void btnConfirmar_Click(object sender, EventArgs e)
         {
-            if(txtLogin)
-            { }
+           
+            
         }
     }
 }

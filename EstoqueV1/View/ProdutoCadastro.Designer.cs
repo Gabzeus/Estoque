@@ -36,21 +36,21 @@ namespace EstoqueV1
             this.lblNome = new System.Windows.Forms.Label();
             this.DtgvDadosCad = new System.Windows.Forms.DataGridView();
             this.produtosBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.db_EstoquesDataSet1 = new EstoqueV1.Db_EstoquesDataSet1();
+          //  this.db_EstoquesDataSet1 = new EstoqueV1.Db_EstoquesDataSet1();
             this.lblCategoria = new System.Windows.Forms.Label();
             this.txtCategoria = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.txtEstoque = new System.Windows.Forms.TextBox();
-            this.db_EstoquesDataSet = new EstoqueV1.Db_EstoquesDataSet();
+           // this.db_EstoquesDataSet = new EstoqueV1.Db_EstoquesDataSet();
             this.dbEstoquesDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.label1 = new System.Windows.Forms.Label();
             this.dbEstoquesDataSetBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.dbEstoquesDataSetBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
-            this.produtosTableAdapter = new EstoqueV1.Db_EstoquesDataSet1TableAdapters.ProdutosTableAdapter();
+           // this.produtosTableAdapter = new EstoqueV1.Db_EstoquesDataSet1TableAdapters.ProdutosTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.DtgvDadosCad)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.produtosBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.db_EstoquesDataSet1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.db_EstoquesDataSet)).BeginInit();
+           // ((System.ComponentModel.ISupportInitialize)(this.db_EstoquesDataSet1)).BeginInit();
+         //   ((System.ComponentModel.ISupportInitialize)(this.db_EstoquesDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dbEstoquesDataSetBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dbEstoquesDataSetBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dbEstoquesDataSetBindingSource2)).BeginInit();
@@ -111,12 +111,12 @@ namespace EstoqueV1
             // produtosBindingSource
             // 
             this.produtosBindingSource.DataMember = "Produtos";
-            this.produtosBindingSource.DataSource = this.db_EstoquesDataSet1;
+         //   this.produtosBindingSource.DataSource = this.db_EstoquesDataSet1;
             // 
             // db_EstoquesDataSet1
             // 
-            this.db_EstoquesDataSet1.DataSetName = "Db_EstoquesDataSet1";
-            this.db_EstoquesDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+          //  this.db_EstoquesDataSet1.DataSetName = "Db_EstoquesDataSet1";
+          //  this.db_EstoquesDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // lblCategoria
             // 
@@ -153,12 +153,12 @@ namespace EstoqueV1
             // 
             // db_EstoquesDataSet
             // 
-            this.db_EstoquesDataSet.DataSetName = "Db_EstoquesDataSet";
-            this.db_EstoquesDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+          //  this.db_EstoquesDataSet.DataSetName = "Db_EstoquesDataSet";
+          //  this.db_EstoquesDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // dbEstoquesDataSetBindingSource
             // 
-            this.dbEstoquesDataSetBindingSource.DataSource = this.db_EstoquesDataSet;
+          //  this.dbEstoquesDataSetBindingSource.DataSource = this.db_EstoquesDataSet;
             this.dbEstoquesDataSetBindingSource.Position = 0;
             // 
             // label1
@@ -173,17 +173,17 @@ namespace EstoqueV1
             // 
             // dbEstoquesDataSetBindingSource1
             // 
-            this.dbEstoquesDataSetBindingSource1.DataSource = this.db_EstoquesDataSet;
+           // this.dbEstoquesDataSetBindingSource1.DataSource = this.db_EstoquesDataSet;
             this.dbEstoquesDataSetBindingSource1.Position = 0;
             // 
             // dbEstoquesDataSetBindingSource2
             // 
-            this.dbEstoquesDataSetBindingSource2.DataSource = this.db_EstoquesDataSet;
+         //   this.dbEstoquesDataSetBindingSource2.DataSource = this.db_EstoquesDataSet;
             this.dbEstoquesDataSetBindingSource2.Position = 0;
             // 
             // produtosTableAdapter
             // 
-            this.produtosTableAdapter.ClearBeforeFill = true;
+           // this.produtosTableAdapter.ClearBeforeFill = true;
             // 
             // ProdutoCadastro
             // 
@@ -206,8 +206,8 @@ namespace EstoqueV1
             this.Load += new System.EventHandler(this.CatCadastro_Load);
             ((System.ComponentModel.ISupportInitialize)(this.DtgvDadosCad)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.produtosBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.db_EstoquesDataSet1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.db_EstoquesDataSet)).EndInit();
+           // ((System.ComponentModel.ISupportInitialize)(this.db_EstoquesDataSet1)).EndInit();
+           // ((System.ComponentModel.ISupportInitialize)(this.db_EstoquesDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dbEstoquesDataSetBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dbEstoquesDataSetBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dbEstoquesDataSetBindingSource2)).EndInit();
@@ -227,12 +227,12 @@ namespace EstoqueV1
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtEstoque;
         private System.Windows.Forms.BindingSource dbEstoquesDataSetBindingSource;
-        private Db_EstoquesDataSet db_EstoquesDataSet;
+       // private Db_EstoquesDataSet db_EstoquesDataSet;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.BindingSource dbEstoquesDataSetBindingSource1;
         private System.Windows.Forms.BindingSource dbEstoquesDataSetBindingSource2;
-        private Db_EstoquesDataSet1 db_EstoquesDataSet1;
+     //   private Db_EstoquesDataSet1 db_EstoquesDataSet1;
         private System.Windows.Forms.BindingSource produtosBindingSource;
-        private Db_EstoquesDataSet1TableAdapters.ProdutosTableAdapter produtosTableAdapter;
+      //  private Db_EstoquesDataSet1TableAdapters.ProdutosTableAdapter produtosTableAdapter;
     }
 }
